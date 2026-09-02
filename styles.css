@@ -3276,3 +3276,32 @@ code {
 .detail-page .filter-bar { z-index: 40; overflow: visible; }
 .date-filters, .custom-select, .custom-select-trigger, .custom-select-menu { pointer-events: auto; }
 .custom-select.is-open { z-index: 50; }
+
+/* Stable portal-card hover: fixed geometry with a controlled light response. */
+@media (hover: hover) and (min-width: 761px) {
+  .release-portal .portal-deck:hover .portal-card,
+  .release-portal .portal-deck .portal-card:hover,
+  .release-portal .portal-deck .portal-card:focus-visible { flex-grow: 1 !important; }
+  .release-portal .portal-card {
+    transform-style: flat;
+    transition: transform 320ms cubic-bezier(.16,1,.3,1), border-color 220ms ease, box-shadow 320ms ease;
+  }
+  .release-portal .portal-card:hover,
+  .release-portal .portal-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,.27);
+    box-shadow: 0 38px 88px rgba(0,0,0,.42), 0 0 0 1px rgba(99,245,193,.08);
+  }
+  .release-portal .portal-card.codex:hover,
+  .release-portal .portal-card.codex:focus-visible {
+    box-shadow: 0 38px 88px rgba(0,0,0,.42), 0 0 0 1px rgba(157,143,255,.12);
+  }
+  .release-portal .portal-card .portal-visual,
+  .release-portal .portal-card .landing-copy { transform: none; }
+  .release-portal .portal-card .landing-character,
+  .release-portal .portal-card:hover .landing-character,
+  .release-portal .portal-card:focus-visible .landing-character {
+    transform: translate(-50%, -50%) !important;
+    filter: drop-shadow(0 30px 30px rgba(0,0,0,.44)) brightness(1.04) !important;
+  }
+}

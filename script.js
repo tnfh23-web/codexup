@@ -207,6 +207,7 @@ function buildTicker() {
 
 if (tickerTrack && tickerGroup) {
   buildTicker();
+  document.fonts?.ready.then(buildTicker);
   window.addEventListener("resize", () => {
     window.clearTimeout(tickerResizeTimer);
     tickerResizeTimer = window.setTimeout(buildTicker, 160);
@@ -316,45 +317,18 @@ landingProductButtons.forEach((button) => {
   });
 });
 
-// 카드가 커서를 향해 기울고 내부 그래픽은 반대 방향으로 움직여 깊이감을 만듭니다.
-if (!reduceMotion && window.gsap && window.matchMedia("(hover: hover)").matches) {
+// 카드 크기와 3D 축은 고정하고, 포인터 위치에 맞춘 광원만 이동합니다.
+if (window.matchMedia("(hover: hover)").matches) {
   landingProductCards.forEach((card) => {
-    if (!card.classList.contains("portal-card")) return;
-    const character = card.querySelector(".landing-character");
-    const disc = card.querySelector(".visual-disc");
-    const xTo = window.gsap.quickTo(card, "rotationY", { duration: 0.65, ease: "power3.out" });
-    const yTo = window.gsap.quickTo(card, "rotationX", { duration: 0.65, ease: "power3.out" });
-    const charX = window.gsap.quickTo(character, "x", { duration: 0.8, ease: "power3.out" });
-    const charY = window.gsap.quickTo(character, "y", { duration: 0.8, ease: "power3.out" });
-
     card.addEventListener("pointermove", (event) => {
-      if (card.classList.contains("is-opening")) return;
       const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-      card.style.setProperty("--mx", `${x * 100}%`);
-      card.style.setProperty("--my", `${y * 100}%`);
-      xTo((x - 0.5) * 12);
-      yTo((0.5 - y) * 10);
-      charX((x - 0.5) * 22);
-      charY((y - 0.5) * 16);
-      if (disc) window.gsap.to(disc, { x: (x - 0.5) * -14, y: (y - 0.5) * -10, duration: 0.7, overwrite: "auto" });
+      card.style.setProperty("--mx", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+      card.style.setProperty("--my", `${((event.clientY - rect.top) / rect.height) * 100}%`);
     });
-
-    const resetCard = () => {
-      if (card.classList.contains("is-opening")) return;
-      window.gsap.to(card, { rotationX: 0, rotationY: 0, duration: 0.9, ease: "elastic.out(1, 0.55)", overwrite: true });
-      window.gsap.to([character, disc].filter(Boolean), { x: 0, y: 0, duration: 0.85, ease: "elastic.out(1, 0.6)", overwrite: true });
+    card.addEventListener("pointerleave", () => {
       card.style.setProperty("--mx", "50%");
       card.style.setProperty("--my", "50%");
-    };
-    card.addEventListener("pointerleave", resetCard);
-    card.addEventListener("pointercancel", resetCard);
-  });
-
-  productLanding?.addEventListener("pointermove", (event) => {
-    productLanding.style.setProperty("--cursor-x", `${event.clientX}px`);
-    productLanding.style.setProperty("--cursor-y", `${event.clientY}px`);
+    });
   });
 }
 

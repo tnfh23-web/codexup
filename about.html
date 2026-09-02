@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ChatGPT와 Codex의 공식 업데이트를 읽기 쉬운 한국어로 기록하는 Release Archive 소개">
   <title>소개 · Release Archive</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css?v=20260902d">
+  <link rel="stylesheet" href="fonts.css?v=20260902">
+  <link rel="stylesheet" href="about.css?v=20260902e">
 </head>
-<body>
+<body id="top">
   <div class="loader" aria-hidden="true"><span></span><p>RELEASE / ARCHIVE</p><span></span></div>
   <header class="site-head">
     <a class="wordmark" href="index.html"><i></i>Release Archive</a>
@@ -27,7 +25,11 @@
       <div class="orbit-word" aria-hidden="true">RELEASE • CONTEXT • IMPACT • RELEASE • CONTEXT • IMPACT •</div>
     </section>
 
-    <section class="ticker" aria-label="기록 원칙"><div>OFFICIAL SOURCES&nbsp;&nbsp;—&nbsp;&nbsp;NO DUPLICATES&nbsp;&nbsp;—&nbsp;&nbsp;PLAIN KOREAN&nbsp;&nbsp;—&nbsp;&nbsp;REAL IMPACT&nbsp;&nbsp;—&nbsp;&nbsp;</div></section>
+    <section class="ticker" aria-label="기록 원칙">
+      <div class="ticker-track">
+        <div class="ticker-group"><span>OFFICIAL SOURCES</span><i>✦</i><span>NO DUPLICATES</span><i>✦</i><span>PLAIN KOREAN</span><i>✦</i><span>REAL IMPACT</span><i>✦</i></div>
+      </div>
+    </section>
 
     <section class="manifesto section" id="manifesto">
       <div class="section-mark"><b>01</b><span>WHY WE ARCHIVE</span></div>
@@ -53,12 +55,23 @@
       </div>
     </section>
 
+    <section class="signal-board" aria-labelledby="signal-title">
+      <div class="signal-noise" aria-hidden="true"></div>
+      <header><span>LIVE ARCHIVE PROTOCOL</span><small>SEOUL / KST · CONTINUOUS INDEX</small></header>
+      <div class="signal-copy"><p>공식 발표가<br>읽을 수 있는 신호가 되는 곳.</p><h2 id="signal-title">SOURCE → CONTEXT → IMPACT</h2></div>
+      <div class="signal-grid">
+        <article><b>01</b><strong>VERIFY</strong><span>원문과 발표일 대조</span></article>
+        <article><b>02</b><strong>TRANSLATE</strong><span>맥락이 있는 한국어</span></article>
+        <article><b>03</b><strong>ARCHIVE</strong><span>중복 없는 시간순 기록</span></article>
+      </div>
+    </section>
+
     <section class="lens" aria-label="두 제품을 보는 하나의 관점">
       <div class="lens-stage">
         <div class="lens-copy"><span>ONE ARCHIVE / TWO PRODUCTS</span><h2>대화와 개발.<br>서로 다른 변화,<br>하나의 기록.</h2></div>
         <div class="lens-cards">
-          <a href="index.html?product=chatgpt" class="product-card light"><small>CONVERSATION / CREATION</small><strong>ChatGPT</strong><p>대화, 창작, 모바일과 협업 경험의 변화</p><i>↗</i></a>
-          <a href="index.html?product=codex" class="product-card dark"><small>CODE / AUTOMATION</small><strong>Codex</strong><p>CLI, 데스크톱 앱과 개발 도구의 변화</p><i>↗</i></a>
+          <a href="index.html#chatgpt" class="product-card light"><small>CONVERSATION / CREATION</small><strong>ChatGPT</strong><p>대화, 창작, 모바일과 협업 경험의 변화</p><i>↗</i></a>
+          <a href="index.html#codex" class="product-card dark"><small>CODE / AUTOMATION</small><strong>Codex</strong><p>CLI, 데스크톱 앱과 개발 도구의 변화</p><i>↗</i></a>
         </div>
       </div>
     </section>
@@ -80,6 +93,6 @@
   <footer><span>RELEASE ARCHIVE © 2026</span><a href="#top">BACK TO TOP ↑</a></footer>
   <script src="vendor/gsap/gsap.min.js"></script>
   <script src="vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="about.js?v=20260902d"></script>
+  <script src="about.js?v=20260902e"></script>
 </body>
 </html>

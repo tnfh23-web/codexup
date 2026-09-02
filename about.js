@@ -2,6 +2,28 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const gsapReady = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   const loader = document.querySelector('.loader');
+  const tickerTrack = document.querySelector('.ticker-track');
+  const tickerGroup = tickerTrack?.querySelector('.ticker-group');
+  let tickerTween = null;
+
+  function buildTicker() {
+    if (!tickerTrack || !tickerGroup) return 0;
+    const originalItems = tickerGroup.dataset.originalItems || tickerGroup.innerHTML;
+    tickerGroup.dataset.originalItems = originalItems;
+    tickerTrack.querySelectorAll('.ticker-group').forEach((group, index) => {
+      if (index > 0) group.remove();
+    });
+    tickerGroup.innerHTML = originalItems;
+    while (tickerGroup.scrollWidth < innerWidth + 160) tickerGroup.insertAdjacentHTML('beforeend', originalItems);
+    tickerTrack.append(tickerGroup.cloneNode(true));
+    return tickerGroup.scrollWidth;
+  }
+
+  let tickerWidth = buildTicker();
+  document.fonts?.ready.then(() => {
+    tickerWidth = buildTicker();
+    if (gsapReady && !reduced) playTicker();
+  });
 
   if (!gsapReady || reduced) {
     if (loader) loader.remove();
@@ -21,7 +43,14 @@
     .from('.hero h1 em',{yPercent:110,duration:1,stagger:.12},'-=.45')
     .from('.hero-kicker,.hero-foot',{opacity:0,y:18,duration:.65,stagger:.12},'-=.55');
 
-  gsap.to('.ticker div',{xPercent:-50,ease:'none',duration:22,repeat:-1});
+  function playTicker() {
+    if (!tickerTrack || !tickerWidth) return;
+    tickerTween?.kill();
+    tickerTrack.classList.add('is-gsap');
+    gsap.set(tickerTrack,{x:0});
+    tickerTween = gsap.to(tickerTrack,{x:-tickerWidth,ease:'none',duration:tickerWidth/190,repeat:-1});
+  }
+  playTicker();
   gsap.to('.orbit-word',{yPercent:-35,rotation:2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
   gsap.from('.manifesto-copy .lead',{y:80,opacity:0,ease:'power2.out',scrollTrigger:{trigger:'.manifesto',start:'top 72%',end:'top 35%',scrub:1}});
   gsap.from('.copy-columns p',{y:45,opacity:0,stagger:.15,scrollTrigger:{trigger:'.copy-columns',start:'top 82%'}});
@@ -48,6 +77,13 @@
   gsap.from('.closing h2',{scale:.85,opacity:0,scrollTrigger:{trigger:'.closing',start:'top 70%',end:'center center',scrub:1}});
 
   let resizeTimer;
-  addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>ScrollTrigger.refresh(),180)});
+  addEventListener('resize',()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(()=>{
+      tickerWidth=buildTicker();
+      playTicker();
+      ScrollTrigger.refresh();
+    },180);
+  });
   addEventListener('load',()=>ScrollTrigger.refresh());
 })();
