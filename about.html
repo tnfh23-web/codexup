@@ -3,127 +3,138 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Codex·ChatGPT 업데이트 소식 자동화 프로젝트 소개" />
-    <meta name="theme-color" content="#080a10" />
-    <title>프로젝트 소개 | Release Archive</title>
-    <link rel="stylesheet" href="about.css?v=20260826-8" />
+    <meta name="description" content="매일 OpenAI의 변화를 확인하고 기록하는 Release Archive의 제작 이야기" />
+    <meta name="theme-color" content="#070a0f" />
+    <title>프로젝트 이야기 — Release Archive</title>
+    <link rel="stylesheet" href="about.css?v=20260902" />
   </head>
   <body>
-    <a class="skip-link" href="#story-main">프로젝트 소개 본문 바로가기</a>
+    <a class="skip-link" href="#story">본문 바로가기</a>
     <div class="story-progress" aria-hidden="true"><span></span></div>
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
+
     <header class="story-nav">
-      <a class="story-brand" href="index.html" aria-label="Release Archive 첫 화면으로 돌아가기"><span class="story-mark" aria-hidden="true"><i></i><i></i></span><span>RELEASE<br />ARCHIVE</span></a>
-      <p>PROJECT STORY · 2026</p>
-      <a class="story-back" href="index.html">업데이트 보러 가기 <i aria-hidden="true">↗</i></a>
+      <a class="story-back" href="index.html"><i aria-hidden="true">←</i><span>UPDATE ARCHIVE</span></a>
+      <p><span></span> SYSTEM ONLINE · WEEKDAYS 09:40 KST</p>
+      <a class="nav-cta" href="index.html#update-feed">최신 소식 보기 <i>↗</i></a>
     </header>
 
-    <main id="story-main">
-      <section class="story-hero" aria-labelledby="story-title">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i><span>09:40</span></div>
+    <main id="story">
+      <section class="story-hero" aria-labelledby="hero-title">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i><span>DAILY<br />SIGNAL</span></div>
         <div class="hero-copy">
-          <p class="section-label">CASE STUDY / AUTOMATION</p>
-          <h1 id="story-title"><span>찾아다니던 업데이트를,</span><strong>한곳에서 읽도록.</strong></h1>
-          <p>매일 흩어진 공식 발표를 확인하고, 개발자가 아닌 사람도 이해할 수 있는 기록으로 바꾸는 개인 자동화 프로젝트입니다.</p>
+          <p class="section-label"><span>PROJECT STORY</span> / WHY WE BUILT THIS</p>
+          <h1 id="hero-title"><span>업데이트를</span><span>쫓지 않아도,</span><strong>놓치지 않도록.</strong></h1>
+          <p>ChatGPT와 Codex의 변화를 매일 찾아다니는 대신, 공식 발표를 확인하고 사용자 언어로 번역해 한곳에 쌓는 작은 시스템을 만들었습니다.</p>
         </div>
-        <div class="hero-foot">
-          <p><b>03</b><span>OFFICIAL<br />CHANNELS</span></p><p><b>02</b><span>OUTPUT<br />FORMATS</span></p><p><b>09:40</b><span>DAILY<br />CHECK</span></p>
-          <p class="scroll-cue"><i></i> SCROLL TO EXPLORE</p>
+        <div class="hero-metrics" aria-label="프로젝트 현황">
+          <article><span data-story-count>25</span><small>VERIFIED NOTES</small></article>
+          <article><span>3</span><small>OFFICIAL SOURCES</small></article>
+          <article><span>09:40</span><small>DAILY CHECK / KST</small></article>
+        </div>
+        <p class="scroll-cue">SCROLL TO TRACE THE SYSTEM <i></i></p>
+      </section>
+
+      <section class="manifesto story-section" aria-labelledby="manifesto-title">
+        <p class="section-label">00 / THE IDEA</p>
+        <div class="manifesto-copy">
+          <h2 id="manifesto-title">새로운 기능은 많지만,<br />내게 중요한 변화는 <em>적습니다.</em></h2>
+          <p>릴리스 노트, 변경 로그, GitHub 릴리스가 서로 다른 시간에 갱신됩니다. 기술적인 설명도 길고, 같은 소식이 여러 곳에 반복됩니다.</p>
+        </div>
+        <div class="problem-stack">
+          <article><span>01</span><div><h3>흩어진 출처</h3><p>제품별 공지가 서로 다른 문서와 저장소에 나뉩니다.</p></div><b>3+ SOURCES</b></article>
+          <article><span>02</span><div><h3>기술 중심의 언어</h3><p>무엇이 바뀌었는지보다 코드와 내부 구현이 먼저 보입니다.</p></div><b>HIGH FRICTION</b></article>
+          <article><span>03</span><div><h3>사라지는 맥락</h3><p>그날 읽고 지나가면 변화의 흐름을 다시 찾기 어렵습니다.</p></div><b>LOW MEMORY</b></article>
         </div>
       </section>
 
-      <section class="story-origin story-section" aria-labelledby="origin-title">
-        <header class="section-head"><p class="section-label">01 / WHY</p><h2 id="origin-title">왜 만들게<br />되었을까?</h2></header>
-        <div class="origin-content">
-          <p class="lead">Codex와 ChatGPT는 빠르게 바뀌지만, 새 기능을 확인하는 과정은 생각보다 느렸습니다.</p>
-          <div class="problem-list">
-            <article><span>01</span><h3>소식이 흩어져 있다</h3><p>ChatGPT 릴리스 노트, Codex changelog와 GitHub releases를 각각 방문해야 했습니다.</p></article>
-            <article><span>02</span><h3>기술 문서가 어렵다</h3><p>원문은 정확하지만 실제 사용자에게 무엇이 달라지는지 빠르게 파악하기 어려웠습니다.</p></article>
-            <article><span>03</span><h3>기록이 남지 않는다</h3><p>그날 확인한 변화가 지나가면 나중에 날짜별 흐름을 다시 찾기 힘들었습니다.</p></article>
+      <section class="shift-scene" aria-label="프로젝트가 바꾼 정보 확인 방식">
+        <div class="shift-track">
+          <p class="shift-before">SEARCH<br />EVERY DAY</p>
+          <div class="shift-core" aria-hidden="true"><i></i><span>→</span></div>
+          <p class="shift-after">READ<br />IN ONE PLACE</p>
+        </div>
+      </section>
+
+      <section class="characters story-section" aria-labelledby="characters-title">
+        <header class="section-head">
+          <p class="section-label">01 / TWO SIGNALS</p>
+          <h2 id="characters-title">두 제품의 성격을<br />두 개의 신호로.</h2>
+          <p>긴 기록 속에서도 어떤 제품의 이야기인지 먼저 알아보도록 캐릭터가 정보의 길잡이가 됩니다.</p>
+        </header>
+        <div class="character-console">
+          <div class="character-tabs" role="tablist" aria-label="제품 캐릭터 선택">
+            <button class="is-active" role="tab" aria-selected="true" data-character="chatgpt"><span>01</span> CHATGPT</button>
+            <button role="tab" aria-selected="false" data-character="codex"><span>02</span> CODEX</button>
+          </div>
+          <div class="character-stage">
+            <div class="character-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+            <img src="images/chatgpt-character.png" alt="민트색 ChatGPT 안내 캐릭터" data-character-image />
+            <span class="scan-line" aria-hidden="true"></span>
+          </div>
+          <div class="character-copy" aria-live="polite">
+            <p data-character-index>01 / CONVERSATION</p>
+            <h3 data-character-title>사람과 가까운<br />대화의 신호</h3>
+            <p data-character-description>음성, 창작, 모바일과 협업 기능처럼 일상에 가까운 변화를 부드러운 곡선과 민트색 빛으로 표현합니다.</p>
+            <dl><div><dt>COLOR</dt><dd data-character-color>MINT / #63F5C1</dd></div><div><dt>ROLE</dt><dd data-character-role>USER EXPERIENCE</dd></div></dl>
           </div>
         </div>
       </section>
 
-      <section class="story-shift" aria-label="프로젝트의 핵심 변화">
-        <p class="shift-before">SEARCH<br />EVERY DAY</p><div class="shift-signal" aria-hidden="true"><div class="shift-signal-motion"><span></span><i></i></div></div><p class="shift-after">READ<br />IN ONE PLACE</p>
-      </section>
-
-      <section class="story-characters" aria-labelledby="characters-title">
-        <header class="character-heading">
-          <p class="section-label">VISUAL GUIDE / CHARACTERS</p>
-          <h2 id="characters-title">긴 기록 사이에서<br />제품을 먼저 알아보도록.</h2>
-          <p>두 캐릭터는 OpenAI의 공식 마스코트가 아니라, 이 아카이브를 위해 만든 시각적 안내자입니다.</p>
+      <section class="system story-section" aria-labelledby="system-title">
+        <header class="section-head">
+          <p class="section-label">02 / THE SYSTEM</p>
+          <h2 id="system-title">매일 9시 40분,<br />신호가 흐르기 시작합니다.</h2>
+          <p>단순 수집이 아니라 확인, 번역, 검증, 배포를 하나의 흐름으로 연결합니다.</p>
         </header>
-        <div class="character-stage">
-          <article class="character-panel character-chatgpt">
-            <div class="character-visual"><span class="character-ring"></span><img src="images/chatgpt-character.png" alt="" /></div>
-            <div class="character-copy"><span>01 / CHATGPT</span><h3>친근하고 유연한<br />대화의 이미지</h3><p>대화·음성·창작처럼 사람과 가까운 기능을 표현하기 위해 부드러운 곡선과 민트색 빛을 사용했습니다.</p></div>
-          </article>
-          <article class="character-panel character-codex">
-            <div class="character-visual"><span class="character-ring"></span><img src="images/codex-character.png" alt="" /></div>
-            <div class="character-copy"><span>02 / CODEX</span><h3>정밀하고 선명한<br />빌더의 이미지</h3><p>코드·자동화·개발 도구의 성격을 빠르게 구분하도록 단단한 실루엣과 바이올렛 계열을 사용했습니다.</p></div>
-          </article>
-        </div>
-        <p class="character-note"><span>ROLE</span> 꾸밈을 위한 캐릭터가 아니라, 긴 업데이트 목록에서 제품과 정보 성격을 즉시 구분하는 내비게이션 역할을 합니다.</p>
-      </section>
-
-      <section class="story-process story-section" aria-labelledby="process-title">
-        <header class="section-head"><p class="section-label">02 / HOW IT WORKS</p><h2 id="process-title">매일 9시 40분,<br />자동으로 확인합니다.</h2><p>주말에 놓친 소식은 월요일 실행에서 함께 확인합니다.</p></header>
-        <ol class="process-list">
-          <li data-step="01"><div class="process-icon"><i></i></div><div><span>TRIGGER</span><h3>예약 실행</h3><p>컴퓨터가 켜져 있는 평일 오전 9시 40분에 확인 작업을 시작합니다.</p></div></li>
-          <li data-step="02"><div class="process-icon"><i></i></div><div><span>VERIFY</span><h3>공식 자료 비교</h3><p>ChatGPT 릴리스 노트, Codex changelog와 GitHub 정식 릴리스를 대조합니다.</p></div></li>
-          <li data-step="03"><div class="process-icon"><i></i></div><div><span>TRANSLATE</span><h3>사용자 언어로 정리</h3><p>발표일·핵심 변경·사용자 영향을 한국어로 풀고 ‘한눈에 보기’를 덧붙입니다.</p></div></li>
-          <li data-step="04"><div class="process-icon"><i></i></div><div><span>PUBLISH</span><h3>웹 아카이브에 기록</h3><p>검증한 내용을 탐색하기 쉬운 HTML 카드로 추가해 한곳에서 관리합니다.</p></div></li>
-        </ol>
-      </section>
-
-      <section class="story-system story-section" aria-labelledby="system-title">
-        <header class="section-head"><p class="section-label">03 / SYSTEM</p><h2 id="system-title">자동 수집보다<br />정확한 검증을 먼저.</h2></header>
-        <div class="system-board">
-          <div class="source-node main-node"><span>CODEX TASK</span><strong>09:40</strong><small>DAILY MONITOR</small></div>
-          <div class="source-node node-a"><span>01</span><strong>ChatGPT</strong><small>RELEASE NOTES</small></div>
-          <div class="source-node node-b"><span>02</span><strong>Codex</strong><small>CHANGELOG</small></div>
-          <div class="source-node node-c"><span>03</span><strong>GitHub</strong><small>RELEASES</small></div>
-          <svg class="system-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
-            <g class="system-base-lines"><path d="M500 260 C360 260 350 105 190 105" /><path d="M500 260 C650 260 650 105 810 105" /><path d="M500 260 C500 390 500 390 500 455" /></g>
-            <g class="system-signal-lines"><path d="M500 260 C360 260 350 105 190 105" /><path d="M500 260 C650 260 650 105 810 105" /><path d="M500 260 C500 390 500 390 500 455" /></g>
-          </svg>
+        <div class="system-console">
+          <ol class="system-steps">
+            <li class="is-active" data-step="0"><button type="button"><span>01</span><div><small>TRIGGER</small><strong>예약 실행</strong></div><i>↗</i></button></li>
+            <li data-step="1"><button type="button"><span>02</span><div><small>VERIFY</small><strong>공식 자료 확인</strong></div><i>↗</i></button></li>
+            <li data-step="2"><button type="button"><span>03</span><div><small>TRANSLATE</small><strong>사용자 언어로 정리</strong></div><i>↗</i></button></li>
+            <li data-step="3"><button type="button"><span>04</span><div><small>PUBLISH</small><strong>웹과 GitHub 반영</strong></div><i>↗</i></button></li>
+          </ol>
+          <div class="system-monitor">
+            <header><span><i></i> LIVE PROCESS</span><time data-monitor-time>09:40:00</time></header>
+            <div class="monitor-visual" aria-hidden="true"><i></i><i></i><i></i><span data-monitor-code>01</span></div>
+            <div class="monitor-copy" aria-live="polite"><small data-monitor-label>TRIGGER / 01</small><h3 data-monitor-title>예약된 확인을 시작합니다.</h3><p data-monitor-description>평일 오전 9시 40분, 마지막 기록 이후의 새로운 공식 발표가 있는지 확인합니다.</p></div>
+            <footer><span data-monitor-status>RUNNING</span><i><b></b></i><em data-monitor-progress>25%</em></footer>
+          </div>
         </div>
       </section>
 
-      <section class="story-output story-section" aria-labelledby="output-title">
-        <header class="section-head"><p class="section-label">04 / OUTPUT</p><h2 id="output-title">한곳에 이어지는<br />업데이트 기록.</h2></header>
-        <div class="output-cards">
-          <article class="output-card markdown"><p>SOURCE / VERIFIED</p><h3>공식 자료 확인</h3><pre><code>RELEASE NOTES
-
-발표일 확인
-핵심 변경 정리
-사용자 영향 번역
-
-OFFICIAL LINKS</code></pre><span>공식 출처 교차 확인</span></article>
-          <article class="output-card interface"><p>INTERFACE / .HTML</p><h3>읽고 탐색하기</h3><div class="mini-ui"><i></i><i></i><i></i><strong>UPDATE<br />SIGNAL</strong><span>FILTER · BADGE · SUMMARY</span></div><span>반응형 웹 아카이브</span></article>
+      <section class="source-map story-section" aria-labelledby="source-title">
+        <header class="section-head"><p class="section-label">03 / TRUST MAP</p><h2 id="source-title">빠른 소식보다<br />확실한 출처를 먼저.</h2></header>
+        <div class="map-board">
+          <svg viewBox="0 0 1000 580" preserveAspectRatio="none" aria-hidden="true"><path d="M180 120 C350 120 350 290 500 290"/><path d="M820 120 C650 120 650 290 500 290"/><path d="M500 500 C500 410 500 380 500 290"/></svg>
+          <article class="source source-a"><span>01</span><strong>ChatGPT</strong><small>RELEASE NOTES</small></article>
+          <article class="source source-b"><span>02</span><strong>Codex</strong><small>CHANGELOG</small></article>
+          <article class="source source-c"><span>03</span><strong>GitHub</strong><small>OFFICIAL RELEASES</small></article>
+          <div class="map-core"><span>VERIFIED</span><strong>✓</strong><small>CROSS-CHECKED</small></div>
         </div>
       </section>
 
-      <section class="story-principles" aria-labelledby="principles-title">
-        <header><p class="section-label">05 / RULES</p><h2 id="principles-title">자동으로 만들지만,<br />아무 소식이나 담지 않습니다.</h2><p>기록의 신뢰도를 지키기 위해 세 가지 원칙을 작업 지시에 포함했습니다.</p></header>
+      <section class="principles story-section" aria-labelledby="principles-title">
+        <header class="section-head"><p class="section-label">04 / EDITORIAL RULES</p><h2 id="principles-title">자동으로 만들지만,<br />아무 소식이나 담지 않습니다.</h2></header>
         <div class="principle-list">
-          <article tabindex="0"><span>01</span><div><small>SOURCE</small><h3>공식 출처만 확인</h3><p>발표 내용과 날짜를 OpenAI 공식 문서 및 공식 GitHub 릴리스에서 교차 확인합니다.</p></div><i aria-hidden="true">↗</i></article>
-          <article tabindex="0"><span>02</span><div><small>CHANGE ONLY</small><h3>새 소식이 있을 때만 수정</h3><p>새로운 공식 발표가 없다면 파일을 만들거나 기존 기록을 불필요하게 변경하지 않습니다.</p></div><i aria-hidden="true">↗</i></article>
-          <article tabindex="0"><span>03</span><div><small>FOR EVERYONE</small><h3>사용자 관점으로 한 번 더</h3><p>기술 용어를 줄인 ‘한눈에 보기’를 마지막에 추가해 실제 영향을 빠르게 이해하도록 합니다.</p></div><i aria-hidden="true">↗</i></article>
+          <article><span>01</span><small>SOURCE</small><h3>공식 출처만</h3><p>날짜와 내용을 OpenAI 공식 문서와 공식 저장소에서 교차 확인합니다.</p><i>↗</i></article>
+          <article><span>02</span><small>CHANGE ONLY</small><h3>새 소식만</h3><p>새로운 발표가 없으면 파일도, 기록도, 배포도 만들지 않습니다.</p><i>↗</i></article>
+          <article><span>03</span><small>FOR HUMANS</small><h3>사용자 관점으로</h3><p>기술 용어를 줄이고 실제로 무엇이 달라지는지 한 번 더 풀어씁니다.</p><i>↗</i></article>
         </div>
       </section>
 
-      <section class="story-result" aria-labelledby="result-title">
-        <p class="section-label">THE RESULT</p><h2 id="result-title">소식을 더 많이 보는 것이 아니라,<br /><strong>필요한 변화를 놓치지 않는 것.</strong></h2>
-        <p>공식 자료의 정확성과 사용자가 읽기 쉬운 요약 사이를 연결하는 작은 시스템을 만들었습니다.</p>
-        <a href="index.html">업데이트 아카이브 열기 <i aria-hidden="true">↗</i></a><div class="result-orbit" aria-hidden="true"><i></i><i></i><span>END / START</span></div>
+      <section class="result" aria-labelledby="result-title">
+        <div class="result-orbit" aria-hidden="true"><i></i><i></i><span>END<br />START</span></div>
+        <p class="section-label">THE RESULT / ALWAYS CURRENT</p>
+        <h2 id="result-title">더 많이 읽기보다,<br /><strong>필요한 변화를 놓치지 않는 것.</strong></h2>
+        <p>공식 자료의 정확성과 누구나 읽을 수 있는 요약 사이를 연결합니다.</p>
+        <a href="index.html"><span>업데이트 아카이브 열기</span><i>↗</i></a>
       </section>
     </main>
-      </div>
-    </div>
-    <script src="vendor/gsap/gsap.min.js"></script><script src="vendor/gsap/ScrollTrigger.min.js"></script><script src="vendor/gsap/ScrollSmoother.min.js"></script><script src="about.js?v=20260826-8"></script>
+
+    <script src="vendor/gsap/gsap.min.js"></script>
+    <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="vendor/gsap/ScrollSmoother.min.js"></script>
+    <script src="about.js?v=20260902"></script>
   </body>
 </html>

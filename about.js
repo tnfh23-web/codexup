@@ -1,159 +1,86 @@
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const progressBar = document.querySelector(".story-progress span");
+(() => {
+  const root = document.documentElement;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const progress = document.querySelector('.story-progress span');
+  const setProgress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+  };
+  addEventListener('scroll', setProgress, { passive: true });
+  setProgress();
 
-function updateProgress() {
-  const distance = document.documentElement.scrollHeight - innerHeight;
-  const progress = distance > 0 ? scrollY / distance : 0;
-  progressBar.style.transform = `scaleX(${Math.min(progress, 1)})`;
-}
+  fetch('index.html').then((r) => r.text()).then((html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const count = doc.querySelectorAll('.update').length;
+    if (count) document.querySelector('[data-story-count]').textContent = count;
+  }).catch(() => {});
 
-addEventListener("scroll", updateProgress, { passive: true });
-addEventListener("resize", updateProgress);
-updateProgress();
-
-if (!reducedMotion && window.gsap && window.ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger, window.ScrollSmoother);
-
-  // GSAP의 가상 스크롤과 모든 ScrollTrigger를 같은 좌표계에서 움직입니다.
-  const smoother = window.ScrollSmoother?.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.15,
-    effects: true,
-    smoothTouch: 0.08,
-  });
-
-  // 커서 주변에 은은한 빛을 붙이고 빠른 보간으로 뒤따르게 합니다.
-  if (window.matchMedia("(hover: hover)").matches) {
-    const cursor = document.createElement("span");
-    cursor.className = "story-cursor";
-    cursor.setAttribute("aria-hidden", "true");
-    document.body.append(cursor);
-    const cursorX = gsap.quickTo(cursor, "x", { duration: 0.55, ease: "power3.out" });
-    const cursorY = gsap.quickTo(cursor, "y", { duration: 0.55, ease: "power3.out" });
-    addEventListener("pointermove", (event) => {
-      cursorX(event.clientX);
-      cursorY(event.clientY);
-      gsap.to(cursor, { autoAlpha: 1, duration: 0.25, overwrite: "auto" });
-    });
-    document.documentElement.addEventListener("mouseleave", () => gsap.to(cursor, { autoAlpha: 0, duration: 0.3 }));
-
-    // 첫 화면의 원형 신호가 마우스와 반대 방향으로 움직여 깊이를 만듭니다.
-    const orbitX = gsap.quickTo(".hero-orbit", "x", { duration: 1.1, ease: "power3.out" });
-    const orbitY = gsap.quickTo(".hero-orbit", "y", { duration: 1.1, ease: "power3.out" });
-    document.querySelector(".story-hero")?.addEventListener("pointermove", (event) => {
-      orbitX((event.clientX / innerWidth - 0.5) * -38);
-      orbitY((event.clientY / innerHeight - 0.5) * -26);
-    });
-
+  const characters = {
+    chatgpt: { image: 'images/chatgpt-character.png', alt: '민트색 ChatGPT 안내 캐릭터', index: '01 / CONVERSATION', title: '사람과 가까운<br>대화의 신호', description: '음성, 창작, 모바일과 협업 기능처럼 일상에 가까운 변화를 부드러운 곡선과 민트색 빛으로 표현합니다.', color: 'MINT / #63F5C1', role: 'USER EXPERIENCE', accent: '#63f5c1' },
+    codex: { image: 'images/codex-character.png', alt: '푸른색 Codex 안내 캐릭터', index: '02 / BUILDER', title: '만드는 사람을 위한<br>실행의 신호', description: '코드 작성, 자동화, 터미널과 에이전트 기능처럼 작업 방식을 바꾸는 소식을 선명한 푸른빛으로 구분합니다.', color: 'BLUE / #69A7FF', role: 'BUILD & AUTOMATION', accent: '#69a7ff' }
+  };
+  const tabs = [...document.querySelectorAll('[data-character]')];
+  const stage = document.querySelector('.character-console');
+  function selectCharacter(key, focus = false) {
+    const item = characters[key];
+    tabs.forEach((tab) => { const active = tab.dataset.character === key; tab.classList.toggle('is-active', active); tab.setAttribute('aria-selected', active); tab.tabIndex = active ? 0 : -1; });
+    stage.style.setProperty('--character', item.accent);
+    const image = document.querySelector('[data-character-image]');
+    const nodes = [image, document.querySelector('.character-copy')];
+    const update = () => {
+      image.src = item.image; image.alt = item.alt;
+      document.querySelector('[data-character-index]').textContent = item.index;
+      document.querySelector('[data-character-title]').innerHTML = item.title;
+      document.querySelector('[data-character-description]').textContent = item.description;
+      document.querySelector('[data-character-color]').textContent = item.color;
+      document.querySelector('[data-character-role]').textContent = item.role;
+    };
+    if (!reduced && window.gsap) gsap.to(nodes, { opacity: 0, y: 10, duration: .18, onComplete: () => { update(); gsap.to(nodes, { opacity: 1, y: 0, duration: .38, ease: 'power2.out' }); } }); else update();
+    if (focus) tabs.find((tab) => tab.dataset.character === key).focus();
   }
-
-  // 첫 장면은 제목, 지표, 궤도 순으로 열어 프로젝트의 출발점을 보여줍니다.
-  gsap.timeline({ defaults: { ease: "power3.out" } })
-    .from(".story-nav > *", { y: -18, autoAlpha: 0, duration: 0.7, stagger: 0.08 })
-    .from(".hero-copy .section-label", { x: -24, autoAlpha: 0, duration: 0.55 }, "-=0.3")
-    .from(".hero-copy h1 > *", { yPercent: 115, rotate: 3, duration: 0.9, stagger: 0.1 }, "-=0.2")
-    .from(".hero-copy > p:last-child", { y: 22, autoAlpha: 0, duration: 0.65 }, "-=0.45")
-    .from(".hero-foot > *", { y: 18, autoAlpha: 0, duration: 0.55, stagger: 0.08 }, "-=0.35")
-    .from(".hero-orbit", { scale: 0.65, rotate: -35, autoAlpha: 0, duration: 1.1 }, "-=1");
-
-  gsap.to(".hero-orbit", { rotate: 18, yPercent: -7, ease: "none", scrollTrigger: { trigger: ".story-hero", start: "top top", end: "bottom top", scrub: 1.2 } });
-  gsap.to(".hero-orbit i:nth-child(1)", { rotate: 360, duration: 24, repeat: -1, ease: "none" });
-  gsap.to(".hero-orbit i:nth-child(2)", { rotate: -360, duration: 18, repeat: -1, ease: "none" });
-
-  document.querySelectorAll(".section-head").forEach((head) => {
-    gsap.from(head.children, { y: 46, autoAlpha: 0, duration: 0.85, stagger: 0.1, ease: "power3.out", scrollTrigger: { trigger: head, start: "top 78%" } });
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectCharacter(tab.dataset.character));
+    tab.addEventListener('keydown', (event) => { if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) return; event.preventDefault(); const delta = ['ArrowRight','ArrowDown'].includes(event.key) ? 1 : -1; selectCharacter(tabs[(index + delta + tabs.length) % tabs.length].dataset.character, true); });
   });
 
-  gsap.from(".problem-list article", { x: 55, autoAlpha: 0, duration: 0.8, stagger: 0.12, ease: "power3.out", scrollTrigger: { trigger: ".problem-list", start: "top 76%" } });
-  gsap.from(".origin-content .lead", { y: 40, autoAlpha: 0, duration: 0.9, scrollTrigger: { trigger: ".origin-content", start: "top 78%" } });
+  const steps = [
+    ['TRIGGER / 01','예약된 확인을 시작합니다.','평일 오전 9시 40분, 마지막 기록 이후의 새로운 공식 발표가 있는지 확인합니다.','RUNNING','25%'],
+    ['VERIFY / 02','공식 출처를 서로 대조합니다.','ChatGPT 릴리스 노트, Codex 변경 로그, GitHub 릴리스의 날짜와 내용을 교차 확인합니다.','CHECKING','50%'],
+    ['TRANSLATE / 03','변화의 의미를 쉽게 풉니다.','기술적인 발표를 실제 사용자에게 무엇이 달라지는지 중심으로 짧고 분명하게 정리합니다.','WRITING','75%'],
+    ['PUBLISH / 04','검증된 기록만 공개합니다.','중복을 제거한 뒤 웹페이지를 갱신하고 GitHub Pages까지 안전하게 반영합니다.','DEPLOYED','100%']
+  ];
+  const stepItems = [...document.querySelectorAll('[data-step]')];
+  let activeStep = 0, cycle;
+  function showStep(index, manual = false) {
+    activeStep = index; const data = steps[index];
+    stepItems.forEach((li, i) => li.classList.toggle('is-active', i === index));
+    document.querySelector('[data-monitor-code]').textContent = String(index + 1).padStart(2, '0');
+    document.querySelector('[data-monitor-label]').textContent = data[0];
+    document.querySelector('[data-monitor-title]').textContent = data[1];
+    document.querySelector('[data-monitor-description]').textContent = data[2];
+    document.querySelector('[data-monitor-status]').textContent = data[3];
+    document.querySelector('[data-monitor-progress]').textContent = data[4];
+    document.querySelector('.system-monitor footer b').style.width = data[4];
+    if (manual) { clearInterval(cycle); cycle = setInterval(() => showStep((activeStep + 1) % steps.length), 4500); }
+  }
+  stepItems.forEach((li, i) => li.querySelector('button').addEventListener('click', () => showStep(i, true)));
+  if (!reduced) cycle = setInterval(() => showStep((activeStep + 1) % steps.length), 4500);
+  setInterval(() => { document.querySelector('[data-monitor-time]').textContent = new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); }, 1000);
 
-  const shiftTimeline = gsap.timeline({ scrollTrigger: {
-    trigger: ".story-shift",
-    start: "top top",
-    end: "+=135%",
-    scrub: 1.25,
-    pin: true,
-    anticipatePin: 1,
-    refreshPriority: 2,
-    onEnter: () => document.querySelector(".story-shift")?.classList.add("is-active"),
-    onEnterBack: () => document.querySelector(".story-shift")?.classList.add("is-active"),
-    onLeaveBack: () => document.querySelector(".story-shift")?.classList.remove("is-active"),
-  } });
-  shiftTimeline
-    .fromTo(".shift-before", { xPercent: -42 }, { xPercent: 125, duration: 1, ease: "sine.inOut" })
-    .fromTo(".shift-after", { xPercent: 42 }, { xPercent: -110, duration: 1, ease: "sine.inOut" }, 0)
-    .fromTo(".shift-signal-motion", { scale: .72, rotate: -35 }, { scale: 1.05, rotate: 220, autoAlpha: 1, duration: 1, ease: "sine.inOut" }, 0)
-    .to(".shift-signal-motion", { autoAlpha: 1, duration: .01 }, 0);
-
-  // 모든 pin을 먼저 생성해야 뒤 섹션의 ScrollTrigger 좌표가 pin 여백을 포함해 계산됩니다.
-  const pinMedia = gsap.matchMedia();
-  pinMedia.add("(min-width: 0px)", () => {
-    gsap.set(".character-codex", { autoAlpha: 0, yPercent: 18, rotationX: -7 });
-    const characterTimeline = gsap.timeline({
-      scrollTrigger: { trigger: ".story-characters", start: "top top", end: "+=145%", scrub: 1, pin: true, anticipatePin: 1, refreshPriority: 1 },
-    });
-    characterTimeline
-      .to(".character-chatgpt", { autoAlpha: 1, duration: .35 })
-      .to(".character-chatgpt", { autoAlpha: 0, yPercent: -16, rotationX: 6, duration: .75 })
-      .to(".character-codex", { autoAlpha: 1, yPercent: 0, rotationX: 0, duration: .75 }, "<.08")
-      .to(".character-codex .character-ring", { rotate: 55, duration: .7 }, "<")
-      .to(".character-codex", { autoAlpha: 1, duration: .4 });
-  });
-
-  // 두 pin의 실제 높이가 정해진 다음 아래쪽 트리거를 등록합니다.
-  ScrollTrigger.refresh();
-
-  document.querySelectorAll(".process-list li").forEach((item, index) => {
-    gsap.from(item, { x: index % 2 ? 55 : 25, autoAlpha: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: item, start: "top 82%" } });
-    gsap.from(item.querySelector(".process-icon"), { scale: 0.4, rotate: -90, duration: 0.8, ease: "back.out(1.7)", scrollTrigger: { trigger: item, start: "top 82%" } });
-  });
-  ScrollTrigger.create({
-    trigger: ".process-list",
-    start: "top 65%",
-    end: "bottom 42%",
-    scrub: true,
-    onUpdate: (self) => {
-      const list = document.querySelector(".process-list");
-      const steps = [...document.querySelectorAll(".process-list li")];
-      list?.style.setProperty("--process-progress", self.progress.toFixed(3));
-      const activeIndex = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
-      steps.forEach((step, index) => step.classList.toggle("is-active", index === activeIndex));
-    },
-  });
-
-  gsap.from(".system-board", { y: 70, autoAlpha: 0, duration: 1, scrollTrigger: { trigger: ".system-board", start: "top 82%" } });
-  gsap.from(".source-node", { scale: 0.6, autoAlpha: 0, duration: 0.75, stagger: 0.13, ease: "back.out(1.45)", scrollTrigger: { trigger: ".system-board", start: "top 70%" } });
-  document.querySelectorAll(".system-base-lines path").forEach((path) => {
-    const length = path.getTotalLength();
-    gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
-    gsap.to(path, { strokeDashoffset: 0, duration: 1.45, ease: "power2.inOut", scrollTrigger: { trigger: ".system-board", start: "top 72%" } });
-  });
-  const signalTween = gsap.to(".system-signal-lines path", { strokeDashoffset: -222, duration: 2.2, ease: "none", repeat: -1, paused: true });
-  ScrollTrigger.create({
-    trigger: ".system-board",
-    start: "top 68%",
-    end: "bottom 25%",
-    onEnter: () => { document.querySelector(".system-board")?.classList.add("is-signaling"); gsap.to(".system-signal-lines", { autoAlpha: 1, duration: .35 }); signalTween.restart(); },
-    onEnterBack: () => { document.querySelector(".system-board")?.classList.add("is-signaling"); gsap.to(".system-signal-lines", { autoAlpha: 1, duration: .35 }); signalTween.play(); },
-    onLeave: () => { document.querySelector(".system-board")?.classList.remove("is-signaling"); gsap.to(".system-signal-lines", { autoAlpha: 0, duration: .3 }); signalTween.pause(); },
-    onLeaveBack: () => { document.querySelector(".system-board")?.classList.remove("is-signaling"); gsap.to(".system-signal-lines", { autoAlpha: 0, duration: .3 }); signalTween.pause(); },
-  });
-
-  const outputTimeline = gsap.timeline({ scrollTrigger: { trigger: ".output-cards", start: "top 88%", end: "center 58%", scrub: 1 } });
-  outputTimeline
-    .fromTo(".output-card.markdown", { x: -110, autoAlpha: 0, clipPath: "inset(0 14% 0 0 round 25px)" }, { x: 0, autoAlpha: 1, clipPath: "inset(0 0% 0 0 round 25px)", duration: 1 })
-    .fromTo(".output-card.interface", { x: 110, autoAlpha: 0, clipPath: "inset(0 0 0 14% round 25px)" }, { x: 0, autoAlpha: 1, clipPath: "inset(0 0 0 0% round 25px)", duration: 1 }, 0)
-    .from(".output-card pre", { y: 35, autoAlpha: 0, duration: .55 }, .35)
-    .from(".mini-ui > *", { y: 24, autoAlpha: 0, stagger: .07, duration: .45 }, .42);
-  document.querySelectorAll(".output-card").forEach((card) => {
-    ScrollTrigger.create({ trigger: card, start: "top 62%", end: "bottom 34%", toggleClass: { targets: card, className: "is-scroll-focus" } });
-  });
-  gsap.from(".story-principles > header > *", { y: 42, autoAlpha: 0, duration: 0.85, stagger: 0.1, ease: "power3.out", scrollTrigger: { trigger: ".story-principles", start: "top 76%" } });
-  gsap.from(".principle-list article", { x: 70, autoAlpha: 0, duration: 0.85, stagger: 0.13, ease: "power3.out", scrollTrigger: { trigger: ".principle-list", start: "top 78%" } });
-  gsap.to(".result-orbit", { rotate: 70, scale: 1.12, ease: "none", scrollTrigger: { trigger: ".story-result", start: "top bottom", end: "bottom top", scrub: 1.2 } });
-  gsap.from(".story-result > :not(.result-orbit)", { y: 42, autoAlpha: 0, duration: 0.9, stagger: 0.1, scrollTrigger: { trigger: ".story-result", start: "top 68%" } });
-
-  // 폰트와 이미지가 늦게 반영되는 경우에도 최종 위치를 한 번 더 동기화합니다.
-  addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
-}
+  if (!reduced && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.hero-orbit', { rotate: 180, scrollTrigger: { trigger: '.story-hero', start: 'top top', end: 'bottom top', scrub: 1 } });
+    gsap.from('.hero-copy > *', { opacity: 0, y: 45, duration: 1, stagger: .11, ease: 'power3.out' });
+    gsap.from('.hero-metrics article', { opacity: 0, x: 30, duration: .8, stagger: .09, delay: .35 });
+    gsap.utils.toArray('.section-head, .manifesto-copy, .problem-stack article, .principle-list article').forEach((el) => gsap.from(el, { opacity: 0, y: 40, duration: .85, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%', once: true } }));
+    gsap.fromTo('.shift-before', { xPercent: 0 }, { xPercent: -45, opacity: .15, scrollTrigger: { trigger: '.shift-scene', start: 'top top', end: 'bottom top', scrub: 1, pin: true } });
+    gsap.fromTo('.shift-after', { xPercent: 45, opacity: .2 }, { xPercent: 0, opacity: 1, scrollTrigger: { trigger: '.shift-scene', start: 'top top', end: 'bottom top', scrub: 1 } });
+    gsap.to('.shift-core', { rotate: 360, scrollTrigger: { trigger: '.shift-scene', start: 'top top', end: 'bottom top', scrub: 1 } });
+    gsap.from('.map-board path', { strokeDashoffset: 300, opacity: 0, duration: 2, stagger: .2, scrollTrigger: { trigger: '.map-board', start: 'top 70%' } });
+    gsap.from('.source, .map-core', { opacity: 0, scale: .75, duration: .7, stagger: .13, scrollTrigger: { trigger: '.map-board', start: 'top 67%' } });
+    gsap.to('.result-orbit', { rotate: 220, scrollTrigger: { trigger: '.result', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+    const image = document.querySelector('[data-character-image]');
+    document.querySelector('.character-stage').addEventListener('pointermove', (event) => { const rect = event.currentTarget.getBoundingClientRect(); gsap.to(image,{x:(event.clientX-rect.left-rect.width/2)*.025,y:(event.clientY-rect.top-rect.height/2)*.025,duration:.6}); });
+    document.querySelector('.character-stage').addEventListener('pointerleave', () => gsap.to(image,{x:0,y:0,duration:.6}));
+  }
+})();
