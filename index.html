@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Codex와 ChatGPT의 최신 업데이트 소식" />
+    <meta name="theme-color" content="#090b10" />
+    <title>Codex · ChatGPT 업데이트 소식</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("updates-theme") || "dark";
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#update-feed" data-open-product="all">전체 업데이트 바로가기</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <section class="product-landing release-portal" aria-labelledby="landing-title">
+          <div class="portal-ambient" aria-hidden="true">
+            <span class="portal-glow glow-mint"></span>
+            <span class="portal-glow glow-violet"></span>
+            <span class="portal-grid-lines"></span>
+            <span class="portal-cursor-light"></span>
+          </div>
+
+          <header class="portal-nav">
+            <a class="portal-brand" href="index.html" aria-label="업데이트 아카이브 첫 화면">
+              <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+              <span>RELEASE<br />ARCHIVE</span>
+            </a>
+            <p class="portal-status"><i aria-hidden="true"></i> CURATED DAILY · KST 09:40</p>
+            <p class="portal-edition">OPENAI PRODUCTS<br /><strong>2026 / ARCHIVE</strong></p>
+          </header>
+
+          <div class="portal-layout">
+            <header class="portal-intro">
+              <p class="portal-kicker"><span>01—26</span> CHANGE SIGNALS</p>
+              <h1 id="landing-title"><span>변화를 읽는</span><strong>두 개의 시선.</strong></h1>
+              <p class="portal-description">쏟아지는 기술 문서 대신, 실제 사용자에게 필요한 변화만 골라 기록합니다. 원하는 제품을 선택해 최신 흐름을 확인하세요.</p>
+              <a class="portal-story-link" href="about.html">
+                <span><small>PROJECT STORY</small><strong>이 자동화는 왜 만들었을까?</strong><em>기획부터 매일 기록되는 과정까지 살펴보기</em></span>
+                <i aria-hidden="true">↗</i>
+              </a>
+              <div class="portal-summary" aria-label="업데이트 현황">
+                <span><b data-total-updates>0</b><small>TOTAL NOTES</small></span>
+                <span><b>2</b><small>PRODUCTS</small></span>
+                <span><b>DAILY</b><small>VERIFIED</small></span>
+              </div>
+            </header>
+
+            <div class="landing-split portal-deck" aria-label="제품 선택">
+              <button type="button" class="landing-product portal-card chatgpt" data-open-product="chatgpt">
+                <span class="card-light" aria-hidden="true"></span>
+                <span class="card-topline"><span>01 / CHAT</span><span>USER EXPERIENCE</span></span>
+                <span class="portal-visual" aria-hidden="true">
+                  <span class="visual-orbit orbit-one"></span><span class="visual-orbit orbit-two"></span>
+                  <span class="visual-disc"></span>
+                  <img src="images/chatgpt-character.png" alt="" class="landing-character" />
+                  <span class="visual-chip chip-one">VOICE</span><span class="visual-chip chip-two">CREATE</span>
+                </span>
+                <span class="landing-copy">
+                  <span class="landing-label">CONVERSATION · CREATION</span>
+                  <strong>ChatGPT</strong>
+                  <span class="landing-description">대화, 창작, 모바일과 협업 기능의 변화를 확인합니다.</span>
+                  <span class="landing-meta"><b data-landing-count="chatgpt">0</b> NOTES <i></i> <time data-landing-latest="chatgpt"></time></span>
+                  <span class="landing-action">소식 탐색하기 <i aria-hidden="true">↗</i></span>
+                </span>
+              </button>
+
+              <button type="button" class="landing-product portal-card codex" data-open-product="codex">
+                <span class="card-light" aria-hidden="true"></span>
+                <span class="card-topline"><span>02 / CODE</span><span>DEVELOPER TOOLS</span></span>
+                <span class="portal-visual" aria-hidden="true">
+                  <span class="visual-orbit orbit-one"></span><span class="visual-orbit orbit-two"></span>
+                  <span class="visual-disc"></span>
+                  <img src="images/codex-character.png" alt="" class="landing-character" />
+                  <span class="visual-chip chip-one">CLI</span><span class="visual-chip chip-two">BUILD</span>
+                </span>
+                <span class="landing-copy">
+                  <span class="landing-label">CODE · AUTOMATION</span>
+                  <strong>Codex</strong>
+                  <span class="landing-description">CLI, 데스크톱 앱과 개발 도구의 핵심 변화를 확인합니다.</span>
+                  <span class="landing-meta"><b data-landing-count="codex">0</b> NOTES <i></i> <time data-landing-latest="codex"></time></span>
+                  <span class="landing-action">소식 탐색하기 <i aria-hidden="true">↗</i></span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="portal-ticker" aria-hidden="true">
+            <div class="ticker-track">
+              <div class="ticker-group"><span>OFFICIAL SOURCES</span><i>✦</i><span>HUMAN-FRIENDLY SUMMARY</span><i>✦</i><span>DAILY RELEASE SIGNALS</span><i>✦</i></div>
+            </div>
+          </div>
+        </section>
+
+    <main class="updates detail-page" hidden>
+      <header class="page-header">
+        <button type="button" class="landing-back" aria-label="제품 선택 화면으로 돌아가기">← <span>제품 선택</span></button>
+        <button type="button" class="theme-toggle" aria-label="밝은 테마로 변경" aria-pressed="false">
+          <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+          <span class="theme-toggle-text">LIGHT</span>
+        </button>
+        <p class="eyebrow">RELEASE NOTES</p>
+        <h1 id="detail-title" tabindex="-1">업데이트 소식</h1>
+        <p class="intro" id="detail-intro">새로운 기능과 중요한 변경 사항을 날짜별로 정리합니다.</p>
+        <div class="update-status" aria-live="polite">
+          <span><strong id="update-count">20</strong>개의 업데이트</span>
+          <span>마지막 업데이트 <time id="latest-update" datetime="2026-08-27">2026-08-27</time></span>
+        </div>
+      </header>
+
+      <div class="filter-bar" id="update-feed" tabindex="-1">
+        <nav class="filters" aria-label="제품별 업데이트 필터">
+          <span class="filter-indicator" aria-hidden="true"></span>
+          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">전체</button>
+          <button type="button" class="filter-button" data-filter="chatgpt" aria-pressed="false">ChatGPT</button>
+          <button type="button" class="filter-button" data-filter="codex" aria-pressed="false">Codex</button>
+        </nav>
+        <div class="date-filters" aria-label="업데이트 기간 필터">
+          <div class="custom-select" data-date-filter="year">
+            <button type="button" class="custom-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="custom-select-value">전체 연도</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+            <ul class="custom-select-menu" role="listbox" aria-label="업데이트 연도" hidden></ul>
+          </div>
+          <div class="custom-select" data-date-filter="month">
+            <button type="button" class="custom-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="custom-select-value">전체 월</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+            <ul class="custom-select-menu" role="listbox" aria-label="업데이트 월" hidden></ul>
+          </div>
+        </div>
+        <button type="button" class="filter-reset" hidden>필터 초기화</button>
+      </div>
+
+      <section class="update-list" aria-label="날짜별 업데이트">
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-09-01">2026-09-01</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT iOS 1.2026.237</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-01</dd></div>
+              <div><dt>첨부 기능</dt><dd>연결된 Windows와 Linux 호스트를 포함한 모든 호스트에서 첨부파일을 사용할 수 있으며, 사진 보관함의 동영상도 첨부할 수 있습니다. 첨부 버튼을 길게 눌러 최근 사진을 빠르게 선택하는 기능도 제공됩니다.</dd></div>
+              <div><dt>작업 관리</dt><dd>실행 중인 작업, 읽지 않은 업데이트, 답변을 기다리는 작업을 위로 모아 보여주는 우선순위 보기가 추가됐습니다. 대기 중인 프롬프트는 연결된 호스트와 동기화되고 편집할 수 있으며 앱이 백그라운드에 있어도 전송됩니다.</dd></div>
+              <div><dt>상태 표시</dt><dd>장시간 실행되는 작업의 실제 작업 시간이 표시되고, 작업 메뉴에서 스레드 ID를 복사할 수 있습니다. 작업 목록 로딩과 재연결, 긴 응답 스트리밍 안정성도 개선됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>아이폰에서 원격 컴퓨터의 Codex 작업을 확인하고 이어가는 흐름이 더 안정적이고 편리해졌습니다. 특히 여러 작업을 동시에 진행할 때 우선 확인할 항목을 찾기 쉬워졌습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>ChatGPT iOS 앱에서 Windows·Linux 호스트의 파일과 동영상 첨부가 가능해지고, 중요한 Codex 작업을 우선 모아보거나 대기 프롬프트를 백그라운드에서 전송하기 쉬워졌습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-01">2026-09-01</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.152.1</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-01</dd></div>
+              <div><dt>수정 내용</dt><dd>Guardian 승인 검토가 모델 메타데이터를 통해 전달되는 Node REPL 정책을 올바르게 따르도록 수정됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>Node.js 대화형 실행 환경을 사용할 때 승인 정책이 의도한 대로 적용됩니다. 0.152.0 사용자는 승인 처리의 정확성을 위해 패치 버전으로 업데이트하는 것이 좋습니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.152.1</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.152.1" target="_blank" rel="noopener noreferrer">Codex GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Node REPL을 사용할 때 Guardian의 승인 검토가 지정된 정책을 정확히 따르도록 고친 작은 보안·정책 패치입니다. 0.152.0 사용자라면 0.152.1로 올리는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-01">2026-09-01</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.152.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-01</dd></div>
+              <div><dt>새 기능</dt><dd>Vim 모드에서 초안 안의 <code>/</code>·<code>?</code> 검색과 결과 강조, <code>n</code>·<code>N</code> 반복 탐색을 지원합니다. 사용량 제한 배너에서는 사용량 확인, 크레딧·한도 초기화·요금제 관리 화면으로 바로 이동할 수 있습니다.</dd></div>
+              <div><dt>도구·연동</dt><dd>MCP 서버 이름에 <code>:</code>, <code>@</code>, <code>/</code>, <code>.</code>을 사용할 수 있고 개별 MCP 도구에 출력 토큰 한도를 설정할 수 있습니다. 앱 서버의 셸 명령 제한 시간도 한 시간 이상으로 구성할 수 있습니다.</dd></div>
+              <div><dt>안정성·보안</dt><dd>권한 승인 내용이 대화 압축 뒤에도 유지되며, 재개한 작업의 작업 폴더 복원과 MCP 도구 새로고침·인증 재시도가 개선됐습니다. Windows PowerShell 샌드박스 실행과 일부 터미널 표시 오류도 수정됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>터미널 편집과 사용량 관리가 편해지고, 장시간 명령과 MCP 연동의 제어 범위가 넓어졌습니다. Windows 및 원격 작업의 안정성과 자격 증명 보호도 강화됐습니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.152.0</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.152.0" target="_blank" rel="noopener noreferrer">Codex GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Vim 검색, 사용량 관리 바로가기, MCP 출력 제한과 장시간 셸 명령 설정이 추가됐습니다. 권한·인증·Windows 샌드박스 관련 오류도 폭넓게 수정된 주요 업데이트입니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-29">2026-08-29</time>
+            <div class="badges"><span class="priority improvement">기능 개선</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.151.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-29</dd></div>
+              <div><dt>새 기능</dt><dd>선택형 MCP 서버에서 도구를 발견할 때 기다리는 유예 시간을 설정할 수 있습니다. 확장 기능은 MCP 도구 결과가 모델에 전달되기 전에 내용을 검사하거나 교체할 수 있습니다.</dd></div>
+              <div><dt>플러그인</dt><dd>플러그인 카탈로그가 저장소별 구성을 함께 반영하며, 프로젝트 마켓플레이스 일부가 잘못돼도 정상적인 플러그인 목록을 계속 보여줍니다.</dd></div>
+              <div><dt>안정성·보안</dt><dd>복원된 권한 프로필이 터미널 작업 사이에 유지되고 <code>/cd</code>가 샌드박스 제한을 약화하지 않도록 수정됐습니다. 모델 전환 시 도구와 추론 수준, 원격 샌드박스의 운영체제·경로 처리도 개선됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>MCP와 플러그인을 많이 사용하는 환경에서 시작 지연과 결과 처리 방식을 더 세밀하게 조정할 수 있습니다. 작업 폴더를 바꾸거나 모델을 전환해도 권한과 도구 설정이 더 안전하게 유지됩니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.151.0</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.151.0" target="_blank" rel="noopener noreferrer">Codex GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>MCP 도구 발견 시간과 결과를 확장 기능에서 다룰 수 있게 됐고, 저장소별 플러그인 구성이 개선됐습니다. 권한 프로필과 원격 샌드박스 보호도 더 안정적으로 유지됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-27">2026-08-27</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.150.1</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-27</dd></div>
+              <div><dt>수정 내용</dt><dd>원격 대화 압축 과정에서 유지 중인 이미지도 기본적으로 토큰 예산에 포함하고, 필요하면 오래된 이미지를 정리하도록 수정됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>이미지가 포함된 긴 원격 작업에서 대화 압축이 토큰 한도를 더 정확하게 계산해 작업이 불안정해지는 상황을 줄입니다. 0.150.0 사용자는 패치 업데이트를 권장합니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.150.1</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.150.1" target="_blank" rel="noopener noreferrer">Codex GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>이미지가 많은 긴 원격 작업에서 대화 압축이 토큰 사용량을 더 정확히 계산하도록 고친 패치입니다. 0.150.0을 사용 중이라면 업데이트하는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-27">2026-08-27</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.150.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-26</dd></div>
+              <div><dt>새 기능</dt><dd>다른 Codex 작업을 <code>@</code> 멘션으로 참조하고, 터미널에서 에이전트에게 작업 읽기·생성·메시지 전송을 요청할 수 있습니다. <code>/copy</code>에서는 전체 응답, 개별 코드 블록, 인용문 중 복사할 대상을 선택할 수 있습니다.</dd></div>
+              <div><dt>사용성 개선</dt><dd>이름이 없는 터미널 작업에 설명형 제목이 자동으로 붙고 <code>/rename</code>이 수정 가능한 제목을 제안합니다. 지원되는 터미널에서는 Markdown 링크가 클릭 가능한 라벨로 표시되며, 권한 모드 전환 단축키와 Vim 모드의 마지막 편집 반복 기능도 추가됐습니다.</dd></div>
+              <div><dt>안정성·보안</dt><dd>신뢰하지 않은 프로젝트의 <code>AGENTS.md</code> 지시를 적용하지 않도록 변경됐고, 진단 정보의 자격 증명 가림 처리, 원격 MCP 인증, Windows 유니코드 사용자 경로의 샌드박스 실행 문제가 개선됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>여러 Codex 작업을 연결해 다루는 흐름과 터미널 조작이 편해졌습니다. 보안 및 Windows 안정성 수정까지 적용하려면 최신 버전으로 업데이트하는 것이 좋습니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.150.0</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.150.0" target="_blank" rel="noopener noreferrer">Codex GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex CLI에서 다른 작업을 바로 불러오거나 메시지를 보내고, 필요한 응답 부분만 골라 복사하기 쉬워졌습니다. 보안과 Windows 실행 관련 오류도 함께 수정됐으므로 CLI를 사용한다면 0.150.0으로 업데이트하는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-26">2026-08-26</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>예약 작업 공유·앱 변경 감지와 로그인 웹사이트 작업</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-25</dd></div>
+              <div><dt>앱 변경 감지</dt><dd>ChatGPT Work의 예약 작업이 Gmail 새 메일, Slack 채널 메시지와 GitHub 풀 리퀘스트 변경을 감지해 실행될 수 있습니다. 승인이 필요한 작업은 사용자가 확인할 때까지 멈춥니다.</dd></div>
+              <div><dt>예약 작업 공유</dt><dd>예약 작업을 다른 사람에게 공유하면 상대방이 지시와 일정을 수정하고, 자신의 앱을 연결해 독립적인 복사본을 만들 수 있습니다. Free 사용자는 활성 작업을 최대 3개까지 만들 수 있지만 앱 변경 감지 방식은 지원하지 않습니다.</dd></div>
+              <div><dt>로그인 웹사이트</dt><dd>Plus와 Pro 사용자는 ChatGPT Work 브라우저에서 로그인이 필요한 일부 사이트의 작업을 맡길 수 있습니다. 로그인 정보와 보안 코드는 사용자가 직접 입력하며, 예약이나 결제처럼 중요한 작업은 실행 전에 확인을 요청합니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>메일·메시지·GitHub 변경을 기준으로 후속 작업을 자동화하고, 만든 예약 작업을 다른 사람과 재사용할 수 있습니다. 로그인 상태가 유지될 수 있으므로 Cloud browser 설정에서 브라우저 데이터를 관리해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>ChatGPT 예약 작업이 단순한 알람을 넘어 새 메일이나 메시지, GitHub 변경에 맞춰 움직일 수 있게 됐습니다. 다른 사람에게 작업 양식을 공유하거나 로그인한 웹사이트의 반복 작업을 맡길 수도 있지만, 앱 연결과 중요한 실행 내용은 사용자가 직접 확인하는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-25">2026-08-25</time>
+            <div class="badges"><span class="priority important">중요 변경</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2><code>codex mcp-server</code> 명령 사용 중단 예정</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-24</dd></div>
+              <div><dt>중요 변경</dt><dd><code>codex mcp-server</code> 명령이 더 이상 권장되지 않는 사용 중단 예정 상태로 전환됐습니다.</dd></div>
+              <div><dt>대체 방법</dt><dd>일반적인 연동은 Codex app server를 사용해야 합니다. Claude Code에서 Codex를 사용하려면 Codex for Claude Code 플러그인을 사용합니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>기존 명령을 자동화 스크립트나 개발 도구 연결에 사용하고 있다면 향후 제거에 대비해 연결 방식을 변경해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>기존 <code>codex mcp-server</code> 연결 방식이 앞으로 없어질 예정이므로 관련 설정이나 스크립트를 점검해야 합니다. 일반적인 연동은 Codex app server로 옮기고, Claude Code에서는 전용 플러그인을 사용하면 됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-25">2026-08-25</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.149.1</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-24</dd></div>
+              <div><dt>변경 내용</dt><dd>Codex CLI 0.149.0 이후 수정사항을 포함한 정식 패치 버전이 공개됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>0.149.0을 사용 중인 경우 최신 패치와 안정성 개선을 적용하기 위해 업데이트를 권장합니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.149.1</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.149.1" target="_blank" rel="noopener noreferrer">GitHub 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>새 기능 중심의 대규모 업데이트가 아니라 0.149.0 이후 수정사항을 묶은 정식 패치 버전입니다. Codex CLI를 사용하고 있다면 명령 한 번으로 0.149.1로 올려 최신 상태를 유지하는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-24">2026-08-24</time>
+            <div class="badges"><span class="priority improvement">기능 개선</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT 웹·모바일 사용 경험 개선</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-21</dd></div>
+              <div><dt>플러그인 추천</dt><dd>설치 후에도 사람들이 계속 사용하는 플러그인을 우선 추천하도록 순위가 개선됐습니다. 웹과 모바일에 적용되며 데스크톱 앱은 이번 업데이트에 포함되지 않습니다.</dd></div>
+              <div><dt>시간 인식·웹 성능</dt><dd>사용자의 현지 시간을 더 잘 고려해 답변합니다. 긴 대화는 작은 구간으로 나눠 빠르게 불러오고, 인터랙티브 콘텐츠는 생성 중에도 점진적으로 표시합니다.</dd></div>
+              <div><dt>iOS</dt><dd><code>+</code> 버튼을 길게 눌러 최근 사진을 빠르게 첨부할 수 있으며, 인터넷 연결을 기다리는 상황을 더 명확하게 안내합니다.</dd></div>
+              <div><dt>Android</dt><dd>생성 이미지가 대화 너비에 맞게 크게 표시되고, 사이드바에서 최근 대화를 최대 8개까지 볼 수 있습니다. Android 앱 1.2026.216 이상에서 제공됩니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>긴 대화와 인터랙티브 콘텐츠가 더 빠르게 표시되고, ChatGPT가 현재 시간대를 고려한 답변을 제공하게 됐습니다. 모바일에서는 사진 첨부와 최근 대화 탐색이 편해졌으며, 플러그인 추천도 실제로 꾸준히 쓰이는 도구를 더 잘 보여주도록 개선됐습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-21">2026-08-21</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex 및 ChatGPT 기능 업데이트</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-20</dd></div>
+              <div><dt>Apple 메시지</dt><dd>Apple silicon Mac에서 Apple Messages 플러그인으로 iMessage, SMS와 RCS 대화를 읽고 검색하거나 메시지를 준비·전송할 수 있습니다. 기본적으로 전송 전에 수신자와 내용을 승인해야 합니다.</dd></div>
+              <div><dt>Sites</dt><dd>지원되는 환경에서 같은 워크스페이스 구성원과 사이트를 공동 편집할 수 있습니다. Plus와 Pro의 소유자는 새로 배포하지 않고 ChatGPT 호스팅 주소를 변경할 수 있습니다.</dd></div>
+              <div><dt>제공 범위</dt><dd>Computer History가 EEA, 스위스와 영국의 Pro, Business 및 Enterprise 사용자에게 확대됐고, 데스크톱과 iOS의 고정 대화가 동기화됩니다.</dd></div>
+              <div><dt>대화 공유</dt><dd>macOS에서 로컬 Codex 대화의 읽기 전용 스냅샷을 공유할 수 있습니다. 개인 계정 링크는 링크를 아는 누구나 열 수 있으므로 민감한 경로, 변경사항이나 이미지가 남아 있지 않은지 확인해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Mac에서 메시지를 찾거나 보내고, 사이트를 동료와 함께 편집하며, Codex 대화를 읽기 전용 링크로 공유할 수 있게 됐습니다. 메시지 전송과 공유 링크에는 개인정보가 포함될 수 있으므로 승인 내용과 공유할 대화를 반드시 확인하는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-21">2026-08-21</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.149.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-08-20</dd></div>
+              <div><dt>작업 관리</dt><dd><code>codex agents</code>에서 작업을 검색하고 시작·열기·이름 변경·중지할 수 있습니다. <code>codex queue</code>로 기존 로컬 또는 원격 세션에 메시지를 보낼 수도 있습니다.</dd></div>
+              <div><dt>터미널·진단</dt><dd><code>/cd</code>, <code>/pwd</code>, <code>/cwd</code>로 작업 폴더를 관리할 수 있고, <code>codex doctor</code>가 보안 프로그램, 네트워크·프록시, 데스크톱 앱과 업데이트 연결을 진단합니다.</dd></div>
+              <div><dt>안정성</dt><dd>대기 메시지 전달, 세션 재개 시 권한 복원, 하위 에이전트 알림과 승인, WebRTC 재연결 및 Windows Terminal 스크롤 기록을 개선했습니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.149.0</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>여러 Codex 작업을 한 화면에서 관리하고 실행 중인 세션에 메시지를 보내거나 작업 폴더를 바꾸기 쉬워졌습니다. 문제 진단과 세션 복원 안정성도 좋아진 정식 버전이므로 Codex CLI 사용자는 업데이트를 권장합니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-20">2026-08-20</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>iOS용 ChatGPT 1.2026.223</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-18</dd>
+              </div>
+              <div>
+                <dt>새 기능</dt>
+                <dd>앱을 실행할 때 Codex Remote를 바로 열도록 설정할 수 있습니다. 표준 MCP 양식과 수정 가능한 메시지 승인도 지원하며, 연결된 폴더는 파일 화면에서 바로 열립니다.</dd>
+              </div>
+              <div>
+                <dt>음성 채팅</dt>
+                <dd>기존 작업의 입력창에서도 음성을 바로 사용할 수 있습니다. 연결 안정성이 개선됐고, 음성으로 요청한 작업은 백그라운드에서도 계속 진행됩니다.</dd>
+              </div>
+              <div>
+                <dt>작업 관리</dt>
+                <dd>프로젝트 선택, 작업 재연결, 실패한 메시지 다시 시도 기능을 개선했습니다. 유휴 상태나 재연결 뒤 작업이 사라지는 문제와 큰 작업 응답을 불러오지 못하는 문제도 수정했습니다.</dd>
+              </div>
+              <div>
+                <dt>검토·안정성</dt>
+                <dd>큰 워크스페이스에서 변경사항 검토 성능과 안정성을 개선하고, 호스트 연결 과정에서 앱이 멈추는 문제를 수정했습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>iPhone에서도 기존 Codex 작업 입력창에서 음성으로 요청하고, 앱을 벗어난 동안 작업을 계속 진행할 수 있게 됐습니다. 작업 재연결과 큰 변경사항 검토도 더 안정적으로 개선되어 모바일에서 Codex를 이어서 사용할 때 불편이 줄어듭니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-19">2026-08-19</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.148.0</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-18</dd>
+              </div>
+              <div>
+                <dt>새 기능</dt>
+                <dd>터미널 대화 전체를 <code>/export</code> 명령으로 클립보드나 새 마크다운 파일에 내보낼 수 있습니다. <code>codex exec fork</code>로 세션을 분기하고, 터미널의 재개 화면에서 세션을 보관하거나 복원할 수도 있습니다.</dd>
+              </div>
+              <div>
+                <dt>작업 흐름·확장</dt>
+                <dd>터미널 UI 시작 중에도 프롬프트를 작성할 수 있고, 지원되는 워크스페이스에서는 예상 스레드 크레딧 또는 비용을 확인할 수 있습니다. Amazon Bedrock Runtime 지원과 Hooks의 비동기 명령·MCP 도구 호출 기능도 추가됐습니다.</dd>
+              </div>
+              <div>
+                <dt>안정성·보안</dt>
+                <dd>모델 전환, 세션 재개, 일시적인 제공자 장애와 MCP 재인증 복구를 개선했습니다. Linux와 Windows에서 거부되거나 읽을 수 없는 경로는 안전하게 차단되도록 샌드박스 처리도 강화했습니다.</dd>
+              </div>
+              <div>
+                <dt>업데이트 방법</dt>
+                <dd><code>npm install -g @openai/codex@0.148.0</code></dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+              <a href="https://github.com/openai/codex/releases/tag/rust-v0.148.0" target="_blank" rel="noopener noreferrer">GitHub 릴리스</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>터미널에서 나눈 Codex 대화를 마크다운으로 저장하고, 기존 작업을 복제하거나 보관·복원하기 쉬워졌습니다. 세션 복구와 보안 처리도 개선된 정식 버전이므로 Codex CLI 사용자는 업데이트를 권장합니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-18">2026-08-18</time>
+            <div class="badges"><span class="priority improvement">기능 개선</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT 앱 사용 경험 개선</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-14</dd>
+              </div>
+              <div>
+                <dt>학습·프로젝트</dt>
+                <dd>대화 안에서 바로 답할 수 있는 대화형 퀴즈가 모든 개인용 ChatGPT 플랜과 Edu의 웹·모바일에 추가됐습니다. 공유하지 않은 프로젝트는 생성 후에도 기본 메모리와 프로젝트 전용 메모리 사이에서 설정을 바꿀 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>웹·Android</dt>
+                <dd>Free와 Go 사용자도 웹에서 <code>Think</code>를 선택할 수 있습니다. Android에서는 입력 중 받아쓰기 전환, 작성 내용에 맞춘 제안 갱신, 물리 키보드 입력 포커스 유지 기능이 개선됐습니다.</dd>
+              </div>
+              <div>
+                <dt>Linux 데스크톱</dt>
+                <dd>Ubuntu 24.04·26.04 LTS, Debian 13, Fedora 43·44에서 공개 미리보기가 전 세계에 제공됩니다. 내장 브라우저와 Chrome 조작은 지원하지만 다른 데스크톱 앱 조작은 아직 지원하지 않습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>퀴즈로 공부하거나 프로젝트별 기억 범위를 관리하는 일이 더 쉬워졌고, Free와 Go 사용자도 웹에서 어려운 질문에 Think를 사용할 수 있습니다. Android 입력 경험과 Linux 데스크톱 지원도 개선됐지만, Linux에서 다른 데스크톱 앱을 직접 조작하는 기능은 아직 제공되지 않습니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-14">2026-08-14</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>macOS용 Computer History 도입</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-13</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>macOS용 ChatGPT 데스크톱 앱에 사용자가 선택한 앱과 웹사이트 활동을 기억과 타임라인으로 만드는 선택형 <code>Computer History</code> 기능이 추가됐습니다. ChatGPT와 Codex는 이 기록을 참고해 작업 맥락을 이어갈 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>사용자 제어</dt>
+                <dd>기록에 포함할 앱과 웹사이트를 선택하고 수집을 일시 정지할 수 있으며, 저장된 기록을 직접 확인하거나 삭제할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>제공 범위</dt>
+                <dd>ChatGPT Pro, Business 및 Enterprise 사용자에게 제공됩니다. Business와 Enterprise에서는 관리자가 먼저 허용해야 하며, 유럽경제지역(EEA), 스위스와 영국은 초기 제공 지역에서 제외됩니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>Mac에서 하던 작업 흐름을 ChatGPT와 Codex가 기억해 다음 작업에 활용할 수 있는 선택형 기능입니다. 원하지 않는 앱은 제외하거나 수집을 멈출 수 있고 기록도 직접 삭제할 수 있지만, 현재는 일부 유료 플랜과 지역에서만 사용할 수 있습니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-14">2026-08-14</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Linux 데스크톱 앱 미리보기 및 에이전트 가져오기</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-11</dd>
+              </div>
+              <div>
+                <dt>Linux 앱</dt>
+                <dd>지원되는 Ubuntu, Debian 및 Fedora 배포판의 x64·ARM64 환경에서 ChatGPT 데스크톱 앱 미리보기를 설치할 수 있습니다. 배포판에 맞는 <code>.deb</code> 또는 <code>.rpm</code> 패키지로 프로젝트, 로컬 파일과 Codex를 사용할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>가져오기</dt>
+                <dd>데스크톱 앱에서 Claude Code, Claude Cowork와 Cursor의 설정, 지침, 스킬, 플러그인, 프로젝트 및 최근 작업을 가져오고 이후 변경사항을 자동으로 동기화할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>Codex CLI</dt>
+                <dd>Claude Code와 Cursor의 지원되는 설정 및 최근 대화를 <code>/import</code> 명령으로 가져올 수 있습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>Linux 사용자도 지원 배포판에서 ChatGPT 데스크톱 앱을 시험해볼 수 있게 됐습니다. 기존에 Claude나 Cursor에서 사용하던 설정과 최근 작업도 가져올 수 있어 도구를 옮길 때 처음부터 다시 구성해야 하는 부담이 줄어듭니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-11">2026-08-11</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>대화에서 식당 예약 검색 지원</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-10</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>ChatGPT에서 OpenTable, Resy와 Yelp를 통해 예약 가능한 식당과 시간을 찾을 수 있습니다. 위치, 날짜와 시간, 인원수, 음식 종류, 예산, 식단 요구사항이나 분위기를 말하면 가능한 예약 시간을 답변에 표시합니다.</dd>
+              </div>
+              <div>
+                <dt>사용 방법</dt>
+                <dd>결과를 보며 조건을 좁히거나 특정 식당을 다시 확인한 뒤, 원하는 시간을 선택해 예약할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>제공 범위</dt>
+                <dd>모바일, 웹과 데스크톱의 모든 ChatGPT 플랜에 순차 적용됩니다. OpenTable은 전 세계, Resy는 미국, Yelp는 미국과 캐나다에서 지원되며 ChatGPT Work에는 포함되지 않습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>이제 ChatGPT에게 원하는 지역과 시간, 인원과 취향을 말하면 실제로 예약 가능한 식당 시간을 한 번에 비교할 수 있습니다. 마음에 드는 시간을 선택하면 해당 예약 서비스로 이어서 예약할 수 있지만, 서비스별 지원 지역에는 차이가 있습니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-11">2026-08-11</time>
+            <div class="badges"><span class="priority limited">승인 필요</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Daybreak Blue 및 Daybreak Red 도입</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-10</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>승인된 방어 목적의 보안 사용자를 위한 Daybreak가 <code>Blue</code>와 <code>Red</code> 두 접근 등급으로 나뉩니다.</dd>
+              </div>
+              <div>
+                <dt>Daybreak Blue</dt>
+                <dd>GPT-5.6 Sol 같은 범용 모델을 이용해 취약점 탐색, 보안 코드 검토, 탐지 엔지니어링, 사고 대응, 악성코드 분석과 패치 검증을 수행하는 방어 중심 등급입니다.</dd>
+              </div>
+              <div>
+                <dt>Daybreak Red</dt>
+                <dd>별도 승인을 받은 사용자에게 GPT-5.6 Cyber 같은 특화 모델을 제공하며, 허가된 취약점 재현, 익스플로잇 검증, 침투 테스트와 레드팀 작업에 사용합니다.</dd>
+              </div>
+              <div>
+                <dt>접근 조건</dt>
+                <dd>Trusted Access for Cyber 승인이 필요하며 승인된 사용자·워크스페이스 또는 API 조직과 프로젝트, 모델 및 제품 범위에만 적용됩니다. Blue 승인만으로 Red를 사용할 수는 없습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>일반 사용자에게 자동으로 추가되는 기능은 아니며, 공식 승인을 받은 보안 전문가를 위한 접근 체계입니다. 방어 중심 작업은 Blue, 더 높은 위험도를 가진 검증 작업은 별도 심사를 거친 Red로 구분해 안전장치를 강화했습니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-10">2026-08-10</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Voice에서 파일 업로드 및 프로젝트 지원</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-07</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>GPT-Live 기반 ChatGPT Voice에서 파일 업로드와 프로젝트를 사용할 수 있게 됐습니다. 음성 대화 중 파일을 올려 내용을 분석하거나 질문할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>프로젝트 연동</dt>
+                <dd>프로젝트 안에서 음성을 사용하면서 최근 프로젝트 대화, 등록된 소스와 프로젝트 지침을 참고할 수 있습니다.</dd>
+              </div>
+              <div>
+                <dt>사용자 영향</dt>
+                <dd>키보드로 긴 질문을 입력하지 않아도 음성으로 프로젝트 자료를 살펴보고 파일 내용을 이어서 질문할 수 있습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>이제 ChatGPT Voice에서도 파일을 올리고 그 내용을 말로 질문할 수 있습니다. 프로젝트의 기존 대화와 자료도 음성 대화에 이어서 활용할 수 있어, 문서를 보며 대화하는 작업이 더 자연스러워졌습니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-10">2026-08-10</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.147.0</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-07</dd>
+              </div>
+              <div>
+                <dt>핵심 변경</dt>
+                <dd>휴대 가능한 Agent Plugin 설치와 여러 플러그인 카탈로그 검색, 대화 섹션 정리, <code>--approve-for-me</code> 자동 검토 승인, Cursor 관리 스킬 가져오기를 지원합니다.</dd>
+              </div>
+              <div>
+                <dt>안정성·보안</dt>
+                <dd>명령과 대화 기록에서 비밀정보와 전체 bearer token을 가리고, 터미널 입력 멈춤과 문자 렌더링, Windows 백그라운드 프로세스 종료 및 경로 처리를 개선했습니다. 낯선 로컬 프로젝트의 신뢰 확인과 플러그인 격리도 강화했습니다.</dd>
+              </div>
+              <div>
+                <dt>주의 사항</dt>
+                <dd><code>codex exec --full-auto</code>는 더 이상 제공되지 않습니다. 같은 목적에는 <code>--sandbox workspace-write</code>를 사용해야 합니다.</dd>
+              </div>
+              <div>
+                <dt>업데이트</dt>
+                <dd><code>npm install -g @openai/codex@0.147.0</code></dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+              <a href="https://github.com/openai/codex/releases/tag/rust-v0.147.0" target="_blank" rel="noopener noreferrer">GitHub 릴리스</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>Codex에서 플러그인과 외부 스킬을 활용하고 긴 대화를 정리하기가 쉬워졌으며, Windows 터미널과 여러 문자 표시도 더 안정적으로 동작합니다. 보안 처리가 강화됐고, 예전 <code>--full-auto</code> 옵션을 쓰던 사용자는 새 샌드박스 옵션으로 명령을 바꿔야 합니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-07">2026-08-07</time>
+            <div class="badges"><span class="priority important">중요 변경</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>GPT‑5.6 업데이트 및 플랜별 제공 방식 변경</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-06</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>ChatGPT Plus와 Pro 사용자는 사실 신뢰성과 답변 집중도가 개선된 GPT‑5.6 Sol을 사용할 수 있으며, 답변에 어느 정도의 사고 시간을 사용할지 조절하는 새로운 슬라이더가 추가됩니다.</dd>
+              </div>
+              <div>
+                <dt>Free·Go</dt>
+                <dd>GPT‑5.6 Luna가 이번 주부터 기본 모델로 전환됩니다. 다음 주부터는 오용 방지 정책이 적용되는 범위에서 텍스트 채팅을 제한 없이 이용할 수 있고, 어려운 질문을 위한 <strong>Think</strong> 버튼도 제공될 예정입니다. 파일 업로드, 이미지 및 기타 도구에는 별도 제한이 유지됩니다.</dd>
+              </div>
+              <div>
+                <dt>적용 범위</dt>
+                <dd>이번 변경은 ChatGPT의 일반 채팅 환경에 적용되며 ChatGPT Work와 Codex는 변경되지 않습니다.</dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>유료 사용자는 GPT‑5.6의 답변이 더 정확하고 집중력 있게 개선되며, 질문에 얼마나 깊게 생각할지 직접 조절할 수 있습니다. Free와 Go 사용자는 GPT‑5.6 Luna가 기본 모델이 되고, 곧 일반 텍스트 채팅을 더 넉넉하게 이용할 수 있지만 파일과 이미지 기능의 사용 제한은 유지됩니다.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-06">2026-08-06</time>
+            <div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.146.1</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-05</dd>
+              </div>
+              <div>
+                <dt>핵심 변경</dt>
+                <dd>
+                  사이버 기능을 갖춘 모델에 더 안전한 자동 검토 기본값을 적용하고, 터미널 인터페이스에서 권한 변경 이유를 더 명확히 설명하도록
+                  수정했습니다.
+                </dd>
+              </div>
+              <div>
+                <dt>사용자 영향</dt>
+                <dd>
+                  보안 민감 작업에서 자동 검토와 권한 처리가 더 보수적으로 동작합니다. 해당 환경을 사용하는 사용자는
+                  <code>npm install -g @openai/codex@0.146.1</code>
+                  로 업데이트할 수 있습니다.
+                </dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog#codex-cli-01461" target="_blank" rel="noopener noreferrer">
+                ChatGPT &amp; Codex changelog
+              </a>
+              <a href="https://github.com/openai/codex/releases/tag/rust-v0.146.1" target="_blank" rel="noopener noreferrer">GitHub 릴리스</a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>
+                Codex가 보안과 관련된 작업을 조금 더 신중하게 처리하도록 개선됐습니다. 일반적인 사용 방식은 그대로이며, 터미널에서 권한이 필요한
+                이유를 이전보다 이해하기 쉽게 확인할 수 있습니다.
+              </p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-08-05">2026-08-05</time>
+            <div class="badges"><span class="priority feature">기능 개선</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>1만 자 초과 붙여넣기를 첨부파일로 자동 변환</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-08-04</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>
+                  ChatGPT 입력창에 10,000자를 초과하는 내용을 붙여넣으면 본문에 직접 삽입하지 않고 첨부파일로 자동 변환합니다. Enterprise와
+                  Education까지 적용되면서 이제 모든 플랜에서 제공됩니다.
+                </dd>
+              </div>
+              <div>
+                <dt>사용자 영향</dt>
+                <dd>
+                  긴 텍스트가 입력창과 대화의 컨텍스트를 과도하게 차지하는 문제를 줄일 수 있습니다. 필요한 경우
+                  <strong>Show in text field</strong>
+                  를 눌러 다시 일반 본문으로 되돌릴 수 있습니다.
+                </dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">
+                ChatGPT 릴리스 노트
+              </a>
+            </p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>
+                이제 아주 긴 글을 붙여넣어도 채팅창이 복잡해지지 않습니다. ChatGPT가 내용을 파일로 정리해 첨부하며, 원한다면 다시 일반 텍스트로 펼칠
+                수 있습니다.
+              </p>
+            </section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-08-04">2026-08-04</time>
+            <div class="badges"><span class="priority deadline">변경 필요</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>GPT-5.4 및 GPT-5.4 mini 지원 종료 예정</h2>
+            <dl class="details">
+              <div>
+                <dt>발표일</dt>
+                <dd>2026-07-31</dd>
+              </div>
+              <div>
+                <dt>변경 내용</dt>
+                <dd>
+                  ChatGPT 계정으로 로그인한 Codex에서
+                  <code>GPT-5.4</code>
+                  와
+                  <code>GPT-5.4 mini</code>
+                  가 2026년 8월 31일부로 제공 종료됩니다. OpenAI API 및 API 키로 인증한 Codex 세션에서는 계속 사용할 수 있습니다.
+                </dd>
+              </div>
+              <div>
+                <dt>권장 변경</dt>
+                <dd>
+                  <code>GPT-5.4</code>
+                  는
+                  <code>GPT-5.6 Terra</code>
+                  로,
+                  <code>GPT-5.4 mini</code>
+                  는
+                  <code>GPT-5.6 Luna</code>
+                  로 교체합니다.
+                </dd>
+              </div>
+              <div>
+                <dt>사용자 영향</dt>
+                <dd>
+                  워크스페이스 기본 모델, 저장된 모델 설정, 관리형 구성, 커스텀 에이전트 및 예약 작업에서 해당 모델을 사용 중이라면 8월 31일 전에
+                  변경해야 합니다.
+                </dd>
+              </div>
+            </dl>
+            <p class="sources">
+              <span>공식 출처</span>
+              <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a>
+            </p>
+            <aside class="note">
+              이번 확인에서 2026년 8월 3~4일자로 새로 게시된 공식 릴리스 항목은 확인되지 않았습니다. 이 항목은 첫 자동 확인의 기준점으로 기록한 가장
+              최근 공식 공지입니다.
+            </aside>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약">
+              <strong>한눈에 보기</strong>
+              <p>
+                ChatGPT 계정으로 Codex를 이용하면서 GPT-5.4 계열 모델을 선택해 두었다면 8월 31일 전에 새 모델로 바꿔야 합니다. 별도로 API 키를 연결해
+                사용하는 경우에는 이번 종료 대상이 아닙니다.
+              </p>
+            </section>
+          </div>
+        </article>
+      </section>
+        </main>
+      </div>
+    </div>
+    <aside class="scroll-companion chatgpt from-left" data-scroll-companion="chatgpt" aria-hidden="true">
+      <span class="scroll-companion-glow"></span>
+      <img src="images/chatgpt-peek.png" alt="" />
+    </aside>
+    <aside class="scroll-companion codex from-right" data-scroll-companion="codex" aria-hidden="true">
+      <span class="scroll-companion-glow"></span>
+      <img src="images/codex-peek.png" alt="" />
+    </aside>
+    <button type="button" class="back-to-top" aria-label="페이지 맨 위로 이동">↑ <span>맨 위로</span></button>
+    <script src="vendor/gsap/gsap.min.js"></script>
+    <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="vendor/gsap/ScrollSmoother.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
