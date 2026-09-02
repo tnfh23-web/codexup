@@ -1,0 +1,30 @@
+/* Scroll choreography layer — intentionally separate from the base editorial layout. */
+body{--ease:cubic-bezier(.16,1,.3,1)}
+.hero,.type-scene,.parallax-scene,.selection,.guides{isolation:isolate}
+.hero h1 span,.hero h1 em,.type-scene h2 span,.type-scene h2 em{will-change:transform,opacity}
+.hero-word{display:block;overflow:hidden;padding:.04em 0 .08em}
+.hero-word>span{display:block}
+.hero .hero-copy{overflow:visible}
+.hero.is-pinned .hero-description{max-width:590px}
+.type-scene{position:relative;background:#111522;color:#f5f7fb}
+.type-scene:before{content:'';position:absolute;inset:0;background:#315de7;transform:scaleY(0);transform-origin:bottom;z-index:-1}
+.type-scene-meta{border-color:rgba(255,255,255,.4)}
+.type-scene>p{color:#c9d2e4}
+.type-scene h2 em{color:#a9bfff}
+.type-scene .scene-counter{position:absolute;right:var(--gutter);bottom:55px;font:600 11px var(--latin);letter-spacing:.14em}
+.parallax-scene{clip-path:inset(7% 4% round 28px);transform-origin:center;will-change:clip-path,transform,background-position}
+.parallax-copy h2 span{display:inline-block}
+.selection{min-height:100svh;overflow:hidden;background:#f4f6f9}
+.selection-list{display:flex;width:max-content;border-top:0;gap:24px;padding-right:var(--gutter)}
+.hover-row{width:min(72vw,1050px);height:54vh;min-height:500px;flex-flex:0 0 auto;flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:clamp(30px,5vw,75px);border:1px solid var(--line);background:#fff;overflow:hidden}
+.hover-row:nth-child(2){background:#315de7;color:#fff;border-color:#315de7}.hover-row:nth-child(3){background:#111827;color:#fff;border-color:#111827}
+.hover-row>span{position:absolute;left:clamp(30px,5vw,75px);top:clamp(30px,5vw,65px);font-size:13px}.hover-row h3{font-size:clamp(42px,5.4vw,78px);line-height:1.12;letter-spacing:-.045em;margin:0 0 32px;max-width:850px}.hover-row p{font-size:15px;max-width:560px;margin:0;line-height:1.85}.hover-row b{position:absolute;right:35px;top:35px}.hover-row:hover{padding:clamp(30px,5vw,75px)}.hover-row:nth-child(2)>span,.hover-row:nth-child(2) p,.hover-row:nth-child(2) b,.hover-row:nth-child(3)>span,.hover-row:nth-child(3) p,.hover-row:nth-child(3) b{color:rgba(255,255,255,.72)}
+.guides{min-height:100svh;overflow:hidden;grid-template-columns:.58fr 1fr 1fr;align-items:stretch}.guide-copy{align-self:center;position:relative;z-index:5}.guide-visual{height:auto;min-height:70svh;align-self:center;clip-path:inset(8% 6% round 4px);will-change:clip-path,transform}.guide-visual img{will-change:transform}.guide-visual>div{transition:transform .5s var(--ease)}.guide-visual:hover>div{transform:translateY(-7px)}
+.process-steps li{transition:padding .55s var(--ease),background .45s}.process-steps li.active h3{color:var(--blue)}
+.record-card{transform-style:preserve-3d;will-change:transform}.record-parts article{transition:opacity .4s,transform .4s}.record-parts article:not(.is-current){opacity:.42}.record-parts article.is-current{transform:translateX(12px)}
+.source-list summary strong{display:inline;background-image:linear-gradient(var(--blue),var(--blue));background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .65s var(--ease)}.source-list summary:hover strong{background-size:100% 2px}
+.continuity{overflow:hidden}.continuity h2 span{display:inline-block;will-change:transform}
+.motion-cursor{position:fixed;left:0;top:0;width:72px;height:72px;border:1px solid rgba(49,93,231,.6);border-radius:50%;z-index:80;pointer-events:none;display:grid;place-items:center;font:600 8px var(--latin);letter-spacing:.08em;color:var(--blue);opacity:0;transform:translate(-50%,-50%)}
+@media(max-width:980px){.selection-list{width:auto;display:grid;padding-right:0}.hover-row{width:100%;height:auto;min-height:430px}.guides{min-height:auto}.guide-visual{min-height:560px}}
+@media(max-width:650px){.type-scene{min-height:100svh}.parallax-scene{clip-path:inset(3% 14px round 18px)}.selection-list{gap:14px}.hover-row{min-height:410px;padding:28px}.hover-row:hover{padding:28px}.hover-row>span{left:28px;top:28px}.hover-row h3{font-size:38px}.guides{display:block}.guide-copy{margin-bottom:70px}.guide-visual{min-height:500px;margin-top:14px}.motion-cursor{display:none}.record-parts article:not(.is-current){opacity:1}.record-parts article.is-current{transform:none}}
+@media(prefers-reduced-motion:reduce){.parallax-scene{clip-path:none}.record-parts article:not(.is-current){opacity:1}.motion-cursor{display:none}}

@@ -253,8 +253,8 @@ let landingEntrance = null;
 // 첫 화면으로 돌아올 때마다 같은 시작 동작을 깨끗하게 다시 재생합니다.
 function ensureLandingCardsVisible() {
   if (!productLanding || productLanding.hidden || !window.gsap) return;
-  window.gsap.set(landingProductCards, { clearProps: 'opacity,visibility' });
-  landingProductCards.forEach(card => { card.style.opacity=''; card.style.visibility=''; });
+  window.gsap.set('.portal-nav > *, .portal-intro > *, .portal-deck, .portal-card, .portal-card .landing-character, .portal-ticker', { clearProps: 'opacity,visibility,transform,rotate,rotateX,rotateY,x,y,scale' });
+  landingProductCards.forEach(card => { card.style.opacity=''; card.style.visibility=''; card.style.transform=''; });
 }
 
 function playLandingEntrance() {
@@ -267,7 +267,7 @@ function playLandingEntrance() {
     .from(".portal-kicker", { x: -22, autoAlpha: 0, duration: 0.55 }, "-=0.35")
     .from(".portal-intro h1 > *", { yPercent: 115, rotate: 3, duration: 0.9, stagger: 0.1 }, "-=0.35")
     .from(".portal-description, .portal-summary", { y: 24, autoAlpha: 0, duration: 0.7, stagger: 0.1 }, "-=0.52")
-    .from(".portal-card", { y: 70, rotateX: -9, autoAlpha: 0, duration: 1, stagger: 0.14 }, "-=0.8")
+    .from(".portal-deck", { y: 70, rotateX: -6, autoAlpha: 0, duration: 1 }, "-=0.8")
     .from(".portal-card .landing-character", { y: 45, scale: 0.86, autoAlpha: 0, duration: 0.9, stagger: 0.12 }, "-=0.72")
     .from(".portal-ticker", { y: 25, autoAlpha: 0, duration: 0.5 }, "-=0.35");
 }
@@ -289,7 +289,7 @@ function showLandingPage(addHistory = true) {
     requestAnimationFrame(() => document.querySelector('[data-open-product="chatgpt"]')?.focus({ preventScroll: true }));
   }
   requestAnimationFrame(playLandingEntrance);
-  window.setTimeout(ensureLandingCardsVisible, 1800);
+  window.setTimeout(ensureLandingCardsVisible, 2400);
 }
 
 landingProductButtons.forEach((button) => {
@@ -675,3 +675,5 @@ else showLandingPage(false);
 // Restore both landing cards after back/forward cache or background-tab animation throttling.
 window.addEventListener('pageshow', () => requestAnimationFrame(ensureLandingCardsVisible));
 document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(ensureLandingCardsVisible); });
+
+window.addEventListener('load', () => window.setTimeout(ensureLandingCardsVisible, 2500));
