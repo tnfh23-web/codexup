@@ -251,11 +251,18 @@ function showDetailPage(product, addHistory = true) {
 let landingEntrance = null;
 
 // 첫 화면으로 돌아올 때마다 같은 시작 동작을 깨끗하게 다시 재생합니다.
+function ensureLandingCardsVisible() {
+  if (!productLanding || productLanding.hidden || !window.gsap) return;
+  window.gsap.set(landingProductCards, { clearProps: 'opacity,visibility' });
+  landingProductCards.forEach(card => { card.style.opacity=''; card.style.visibility=''; });
+}
+
 function playLandingEntrance() {
   if (!window.gsap || reduceMotion || !productLanding || productLanding.hidden) return;
   landingEntrance?.kill();
   window.gsap.set(".portal-nav > *, .portal-intro > *, .portal-card, .portal-ticker", { clearProps: "all" });
-  landingEntrance = window.gsap.timeline({ defaults: { ease: "power3.out" } })
+  ensureLandingCardsVisible();
+  landingEntrance = window.gsap.timeline({ defaults: { ease: "power3.out" }, onComplete: ensureLandingCardsVisible, onInterrupt: ensureLandingCardsVisible })
     .from(".portal-nav > *", { y: -18, autoAlpha: 0, duration: 0.7, stagger: 0.08 })
     .from(".portal-kicker", { x: -22, autoAlpha: 0, duration: 0.55 }, "-=0.35")
     .from(".portal-intro h1 > *", { yPercent: 115, rotate: 3, duration: 0.9, stagger: 0.1 }, "-=0.35")
@@ -282,6 +289,7 @@ function showLandingPage(addHistory = true) {
     requestAnimationFrame(() => document.querySelector('[data-open-product="chatgpt"]')?.focus({ preventScroll: true }));
   }
   requestAnimationFrame(playLandingEntrance);
+  window.setTimeout(ensureLandingCardsVisible, 1800);
 }
 
 landingProductButtons.forEach((button) => {
@@ -662,3 +670,8 @@ if (!reduceMotion && window.gsap && window.ScrollTrigger && window.ScrollSmoothe
 const initialProduct = location.hash.slice(1);
 if (productPageCopy[initialProduct]) showDetailPage(initialProduct, false);
 else showLandingPage(false);
+
+
+// Restore both landing cards after back/forward cache or background-tab animation throttling.
+window.addEventListener('pageshow', () => requestAnimationFrame(ensureLandingCardsVisible));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(ensureLandingCardsVisible); });

@@ -5,6 +5,14 @@
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     smoother = ScrollSmoother.create({ wrapper: '#smooth-wrapper', content: '#smooth-content', smooth: .85, effects: false, normalizeScroll: false });
   }
+  function buildStaggerLabel(target) {
+    const label=target.textContent.trim(); if(!label || target.dataset.staggerReady) return;
+    target.dataset.staggerReady='true'; target.setAttribute('aria-label',label); target.textContent='';
+    const clip=document.createElement('span'); clip.className='stagger-label'; clip.setAttribute('aria-hidden','true');
+    [...label].forEach((character,index)=>{const column=document.createElement('span');column.className='stagger-character';column.style.setProperty('--character-index',index);const stack=document.createElement('span');stack.className='stagger-stack';[character,character].forEach(value=>{const glyph=document.createElement('span');glyph.textContent=value===' '?'\u00a0':value;stack.append(glyph)});column.append(stack);clip.append(column)});target.append(clip);
+  }
+  document.querySelectorAll('[data-stagger],.stagger-target').forEach(buildStaggerLabel);
+
   const reveals = document.querySelectorAll('.reveal');
   if (reduced || !('IntersectionObserver' in window)) reveals.forEach(el => el.classList.add('visible'));
   else {
@@ -65,4 +73,34 @@
     event.preventDefault();
     smoother.scrollTo(target, true, 'top 72px');
   }));
+
+  if (!reduced && window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray('.draw-underline').forEach(line => ScrollTrigger.create({trigger:line,start:'top 82%',once:true,onEnter:()=>{line.classList.add('line-drawn');gsap.fromTo(line.querySelector(':scope') || line,{},{duration:0});}}));
+    gsap.from('.intro h1', {y:55,opacity:0,duration:1.05,ease:'power3.out'});
+    gsap.from('.intro-text', {y:25,opacity:0,duration:.8,delay:.28,ease:'power2.out'});
+    gsap.from('.intro-note', {x:45,rotation:5,opacity:0,duration:1,delay:.2,ease:'power3.out'});
+    gsap.utils.toArray('.chapter-title').forEach(title => gsap.from(title.children,{y:28,opacity:0,stagger:.08,duration:.7,ease:'power3.out',scrollTrigger:{trigger:title,start:'top 84%',once:true}}));
+    gsap.utils.toArray('.section-divider').forEach(divider=>{gsap.from(divider,{clipPath:'inset(12% 4% 12% 4% round 30px)',scale:.97,duration:1,ease:'power3.out',scrollTrigger:{trigger:divider,start:'top 82%',once:true}});gsap.from(divider.querySelector('h2'),{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:divider,start:'top 67%',once:true}})});
+    gsap.from('.divider-light b',{scaleX:0,duration:1.2,stagger:.2,ease:'power2.inOut',scrollTrigger:{trigger:'.divider-light',start:'top 55%',once:true}});
+    gsap.from('.divider-stats article',{y:35,opacity:0,duration:.75,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.divider-stats',start:'top 72%',once:true}});
+    if (innerWidth > 700) {
+      gsap.to('.divider-light h2',{xPercent:-4,ease:'none',scrollTrigger:{trigger:'.divider-light',start:'top bottom',end:'bottom top',scrub:1}});
+      gsap.to('.divider-dark h2',{xPercent:4,ease:'none',scrollTrigger:{trigger:'.divider-dark',start:'top bottom',end:'bottom top',scrub:1}});
+    }
+    gsap.to('.editorial-strip', {xPercent:-5,ease:'none',scrollTrigger:{trigger:'.editorial-strip',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.utils.toArray('.selection-grid,.portraits').forEach(group => gsap.from(group.children,{y:55,opacity:0,stagger:.14,duration:.85,ease:'power3.out',scrollTrigger:{trigger:group,start:'top 78%',once:true}}));
+    gsap.to('.people-copy',{y:-35,ease:'none',scrollTrigger:{trigger:'.people',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.utils.toArray('.portrait img').forEach((image,index)=>gsap.to(image,{yPercent:-7,rotation:index?2:-2,ease:'none',scrollTrigger:{trigger:image,start:'top bottom',end:'bottom top',scrub:1}}));
+    gsap.utils.toArray('.anatomy-copy article').forEach((item,index)=>ScrollTrigger.create({trigger:item,start:'top 55%',end:'bottom 45%',onEnter:()=>gsap.to('.sample-card',{rotationY:(index-1.5)*1.2,y:index*4,duration:.55,ease:'power2.out'}),onEnterBack:()=>gsap.to('.sample-card',{rotationY:(index-1.5)*1.2,y:index*4,duration:.55})}));
+    gsap.from('.continuity h2',{x:-45,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.continuity',start:'top 76%',once:true}});
+    gsap.from('.continuity>div',{x:45,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.continuity',start:'top 76%',once:true}});
+  }
+
+  if (!reduced && window.gsap && matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.motion-card').forEach(card => {
+      const xTo=gsap.quickTo(card,'rotationY',{duration:.65,ease:'power3.out'}), yTo=gsap.quickTo(card,'rotationX',{duration:.65,ease:'power3.out'});
+      card.addEventListener('pointermove',event=>{const rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;card.style.setProperty('--mx',x*100+'%');card.style.setProperty('--my',y*100+'%');xTo((x-.5)*5);yTo((.5-y)*4);});
+      card.addEventListener('pointerleave',()=>{xTo(0);yTo(0);card.style.setProperty('--mx','50%');card.style.setProperty('--my','50%');});
+    });
+  }
 })();
