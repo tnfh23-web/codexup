@@ -2,148 +2,128 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ChatGPT와 Codex의 새 소식을 확인하고, 쉬운 한국어로 기록하는 업데이트 아카이브의 제작 이야기" />
-  <meta name="theme-color" content="#f1efe7" />
-  <title>이 아카이브를 만든 이유 — Release Archive</title>
-  <link rel="stylesheet" href="about.css?v=20260902b" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="ChatGPT와 Codex의 변화를 확인하고 쉬운 한국어로 기록하는 Release Archive 제작 이야기" />
+  <meta name="theme-color" content="#f4f6f9" />
+  <title>Release Archive를 만든 이유</title>
+  <link rel="stylesheet" href="about.css?v=20260902c" />
 </head>
 <body>
+  <a class="skip" href="#content">본문으로 바로가기</a>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
   <div id="smooth-wrapper"><div id="smooth-content">
-  <a class="skip" href="#main">본문으로 바로가기</a>
-  <header class="topbar">
-    <a class="wordmark" href="index.html"><span>●</span> Release Archive</a>
-    <nav aria-label="소개 페이지 목차">
-      <a href="#why" data-stagger>만든 이유</a><a href="#how" data-stagger>확인 과정</a><a href="#sources" data-stagger>출처</a>
-    </nav>
-    <a class="back" href="index.html"><span class="stagger-target">업데이트 보기</span><span>↗</span></a>
-  </header>
+    <header class="nav">
+      <a class="brand" href="index.html"><i></i><span>RELEASE<br>ARCHIVE</span></a>
+      <p>PROJECT NOTE · 2026</p>
+      <a class="nav-link stagger" href="index.html">업데이트 보기 <b>↗</b></a>
+    </header>
 
-  <main id="main">
-    <section class="intro" aria-labelledby="title">
-      <div class="intro-copy reveal">
-        <p class="eyebrow">개인 프로젝트 · 2026년부터</p>
-        <h1 id="title">업데이트를<br />찾는 시간보다,<br /><em>이해하는 시간.</em></h1>
-        <p class="intro-text">ChatGPT와 Codex는 자주 바뀝니다. 그런데 정작 나에게 중요한 변화가 무엇인지 알려면 여러 문서를 오가야 했습니다. 그래서 매일 공식 발표를 확인하고, 사람이 읽기 좋은 말로 정리하는 아카이브를 만들었습니다.</p>
-      </div>
-      <aside class="intro-note reveal" aria-label="아카이브 현황">
-        <div class="pin" aria-hidden="true"></div>
-        <p>오늘의 기록</p>
-        <strong><span data-count>25</span>개의<br />검증된 소식</strong>
-        <dl><div><dt>확인하는 곳</dt><dd>공식 출처 3곳</dd></div><div><dt>확인 시각</dt><dd>평일 09:40</dd></div><div><dt>기록 방식</dt><dd>쉬운 한국어</dd></div></dl>
-        <small>새 소식이 없는 날은 아무것도 바꾸지 않습니다.</small>
-      </aside>
-      <div class="scribble" aria-hidden="true">매일 찾지<br />않아도 되게!</div>
-    </section>
-
-    <section class="chapter" id="why" data-section="만든 이유">
-      <header class="chapter-title reveal"><span>01</span><h2>왜 만들었을까</h2></header>
-      <div class="why-grid">
-        <p class="lead reveal">새 기능은 많지만,<br />내가 알아야 할 변화는<br /><mark class="draw-underline">생각보다 적습니다.</mark></p>
-        <div class="reasons">
-          <article class="reveal motion-card"><span>하나</span><h3>소식이 흩어져 있습니다.</h3><p>ChatGPT 릴리스 노트, Codex 변경 기록, GitHub 릴리스를 따로 열어봐야 했습니다.</p></article>
-          <article class="reveal motion-card"><span>둘</span><h3>설명이 너무 기술적입니다.</h3><p>정확한 원문을 읽고도 내 작업이 어떻게 달라지는지 바로 알기 어려웠습니다.</p></article>
-          <article class="reveal motion-card"><span>셋</span><h3>읽고 나면 흐름이 사라집니다.</h3><p>지난 변화를 날짜순으로 다시 보고 싶을 때, 한눈에 이어지는 기록이 없었습니다.</p></article>
+    <main id="content">
+      <section class="hero">
+        <div class="hero-index"><span>INTRODUCTION</span><b>00—06</b></div>
+        <div class="hero-copy">
+          <p class="kicker">매일 바뀌는 제품을, 한눈에 이해하는 기록</p>
+          <h1><span>찾아다니던</span><span>업데이트를</span><em>읽을 수 있는 이야기로.</em></h1>
+          <p class="hero-description">공식 발표는 정확하지만 늘 친절하지는 않습니다. Release Archive는 ChatGPT와 Codex의 변화를 직접 확인하고, 실제 사용자에게 무엇이 달라지는지 한국어로 다시 설명합니다.</p>
         </div>
-      </div>
-    </section>
+        <div class="hero-aside">
+          <p><strong data-count>25</strong><span>verified<br>updates</span></p>
+          <p><strong>3</strong><span>official<br>sources</span></p>
+          <p><strong>09:40</strong><span>weekday<br>check</span></p>
+        </div>
+        <div class="hero-stamp">SCROLL<br>TO READ <span>↓</span></div>
+      </section>
 
-
-    <section class="editorial-strip" aria-label="아카이브 편집 기준"><div>공식 발표</div><span>확인</span><div>사용자 영향</div><span>정리</span><div>날짜별 기록</div><span>공개</span></section>
-
-    <section class="chapter selection" aria-labelledby="selection-title">
-      <header class="chapter-title reveal"><span>02</span><h2 id="selection-title">무엇을 기록할까</h2><p>모든 변경을 옮기지 않고, 실제로 알아둘 만한 변화만 고릅니다.</p></header>
-      <div class="selection-grid">
-        <article class="motion-card reveal"><small>기록합니다</small><h3>새로운 기능과<br />사용 방식의 변화</h3><p>새 모델, 새로운 도구, 앱 기능처럼 사용자가 직접 체감할 수 있는 발표를 남깁니다.</p><b>01</b></article>
-        <article class="motion-card reveal"><small>맥락을 붙입니다</small><h3>제공 범위와<br />사용량 정책의 변화</h3><p>누가 언제부터 쓸 수 있는지, 요금제와 사용량이 어떻게 달라지는지도 함께 설명합니다.</p><b>02</b></article>
-        <article class="motion-card reveal"><small>걸러냅니다</small><h3>반복 공지와<br />영향이 작은 수정</h3><p>같은 발표의 재게시나 사용자에게 의미가 거의 없는 내부 변경은 중복 기록하지 않습니다.</p><b>03</b></article>
-      </div>
-    </section>
-
-    <section class="people reveal" aria-labelledby="guides-title">
-      <div class="people-copy"><p class="eyebrow">아카이브의 두 안내자</p><h2 id="guides-title">긴 목록에서도<br />누구의 소식인지<br />먼저 보이도록.</h2><p>두 캐릭터는 공식 마스코트가 아닙니다. 제품을 빠르게 구분하기 위해 이 아카이브에서 만든 시각적 표지입니다.</p></div>
-      <div class="portraits">
-        <figure class="portrait motion-card chatgpt"><div><img src="images/chatgpt-character.png" alt="ChatGPT 소식을 안내하는 민트색 캐릭터" /></div><figcaption><b>ChatGPT</b><span>대화와 일상의 변화</span></figcaption></figure>
-        <figure class="portrait motion-card codex"><div><img src="images/codex-character.png" alt="Codex 소식을 안내하는 보라색 캐릭터" /></div><figcaption><b>Codex</b><span>코드와 작업 방식의 변화</span></figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section-divider divider-light" aria-label="정보를 읽는 방식의 변화">
-      <p>원문을 그대로 옮기는 대신</p><h2>출처에서 <i>맥락으로,</i><br />기능에서 <i>사용 경험으로.</i></h2><div><span>01 · SOURCE</span><b></b><span>02 · CONTEXT</span><b></b><span>03 · IMPACT</span></div>
-    </section>
-
-    <section class="chapter process" id="how" data-section="확인 과정">
-      <header class="chapter-title reveal"><span>03</span><h2>어떻게 확인할까</h2><p>버튼을 눌러 하루의 기록 과정을 살펴보세요.</p></header>
-      <div class="process-board reveal">
-        <ol class="process-tabs" aria-label="업데이트 확인 단계">
-          <li><button class="active" data-step="0" aria-pressed="true"><span>1</span><span class="stagger-target">시간이 되면</span></button></li>
-          <li><button data-step="1" aria-pressed="false"><span>2</span><span class="stagger-target">원문을 보고</span></button></li>
-          <li><button data-step="2" aria-pressed="false"><span>3</span><span class="stagger-target">쉽게 풀고</span></button></li>
-          <li><button data-step="3" aria-pressed="false"><span>4</span><span class="stagger-target">웹에 남깁니다</span></button></li>
+      <section class="opening section">
+        <header class="section-head"><span>01</span><p>시작점</p><i></i></header>
+        <div class="opening-grid">
+          <h2>새 기능은 많지만,<br>내가 알아야 할 변화는<br><em class="underline">생각보다 적습니다.</em></h2>
+          <div class="opening-copy"><p>릴리스 노트, 변경 기록, GitHub 릴리스는 서로 다른 시간에 갱신됩니다. 같은 발표가 반복되기도 하고, 실제 사용에는 큰 영향이 없는 내부 변경도 섞여 있습니다.</p><p>그래서 더 많이 모으는 대신, <b>확인할 가치가 있는 변화만 남기는 일</b>부터 시작했습니다.</p></div>
+        </div>
+        <ol class="frictions">
+          <li><span>01</span><h3>흩어진 발표</h3><p>제품마다 다른 문서와 저장소를 오가야 합니다.</p></li>
+          <li><span>02</span><h3>어려운 원문</h3><p>정확한 설명 속에서 나에게 필요한 의미를 찾아야 합니다.</p></li>
+          <li><span>03</span><h3>사라지는 흐름</h3><p>오늘의 발표만으로는 제품이 향하는 방향을 보기 어렵습니다.</p></li>
         </ol>
-        <div class="process-detail" aria-live="polite">
-          <p><span data-step-label>평일 오전 9시 40분</span><i data-step-number>01</i></p>
-          <h3 data-step-title>확인 작업을 시작합니다.</h3>
-          <p data-step-copy>컴퓨터가 켜져 있으면 예약된 작업이 실행됩니다. 주말 동안 나온 소식은 월요일에 함께 확인합니다.</p>
-          <div class="process-line"><span></span></div>
-          <small data-step-note>예약 실행 · KST</small>
+      </section>
+
+      <section class="parallax-scene" aria-label="업데이트를 편집하는 스튜디오">
+        <div class="parallax-shade"></div>
+        <div class="parallax-copy">
+          <p>FROM SIGNAL TO STORY</p>
+          <h2>원문을 그대로 옮기지 않고,<br><span>맥락을 편집합니다.</span></h2>
+          <div><p>발표 날짜</p><i></i><p>핵심 변화</p><i></i><p>사용자 영향</p></div>
         </div>
-      </div>
-    </section>
+        <small>Release Archive · Editorial desk</small>
+      </section>
 
-
-    <section class="anatomy chapter" aria-labelledby="anatomy-title">
-      <header class="chapter-title reveal"><span>04</span><h2 id="anatomy-title">한 건의 기록이 되는 법</h2><p>원문의 정보는 네 겹의 편집을 거쳐 읽을 수 있는 소식이 됩니다.</p></header>
-      <div class="anatomy-layout">
-        <div class="anatomy-copy">
-          <article class="reveal" data-anatomy="date"><span>01</span><h3>발표 날짜</h3><p>게시일과 실제 배포일이 다르면 두 날짜를 구분합니다.</p></article>
-          <article class="reveal" data-anatomy="change"><span>02</span><h3>핵심 변경</h3><p>원문의 표현을 줄이되 기능의 조건과 범위는 빠뜨리지 않습니다.</p></article>
-          <article class="reveal" data-anatomy="impact"><span>03</span><h3>사용자 영향</h3><p>그래서 내 사용법이 어떻게 달라지는지를 쉬운 문장으로 씁니다.</p></article>
-          <article class="reveal" data-anatomy="source"><span>04</span><h3>공식 출처</h3><p>직접 확인할 수 있도록 가장 가까운 원문 링크를 남깁니다.</p></article>
+      <section class="selection section">
+        <header class="section-head"><span>02</span><p>선별 기준</p><i></i></header>
+        <div class="selection-intro"><h2>모든 변경이<br>기록이 되지는 않습니다.</h2><p>한 건의 소식을 추가하기 전, 세 가지 질문을 거칩니다.</p></div>
+        <div class="selection-list">
+          <article class="hover-row"><span>Q1</span><h3>처음 발표된 내용인가?</h3><p>다른 문서에서 이미 기록한 발표라면 하나로 합칩니다.</p><b>ORIGINAL</b></article>
+          <article class="hover-row"><span>Q2</span><h3>사용자가 체감할 변화인가?</h3><p>기능, 사용량, 제공 범위처럼 실제 경험을 바꾸는지 봅니다.</p><b>RELEVANT</b></article>
+          <article class="hover-row"><span>Q3</span><h3>공식 자료로 확인되는가?</h3><p>추측과 소문이 아니라 직접 연결할 수 있는 원문을 찾습니다.</p><b>VERIFIED</b></article>
         </div>
-        <aside class="sample-card motion-card" aria-label="업데이트 기록 예시">
-          <header><span>CODEX</span><time>2026. 09. 02</time></header>
-          <div><small>사용량 정책</small><h3>ChatGPT와 Codex의<br />사용량이 함께 보입니다.</h3><p>이제 남은 사용량을 한곳에서 확인할 수 있어 작업 계획을 세우기 쉬워졌습니다.</p></div>
-          <footer><span>한눈에 보기</span><b>확인 경로가 하나로 줄었습니다.</b></footer>
-        </aside>
-      </div>
-    </section>
+      </section>
 
-    <section class="section-divider divider-dark" aria-label="하루의 업데이트 편집 결과">
-      <p>한 번의 확인이 남기는 것</p><div class="divider-stats"><article><strong data-count>25</strong><span>검증된 기록</span></article><article><strong>3</strong><span>공식 출처</span></article><article><strong>0</strong><span>허용하는 중복</span></article></div><h2>읽는 사람에게는<br /><i>몇 분의 여유.</i></h2>
-    </section>
+      <section class="guides">
+        <div class="guide-copy">
+          <p>VISUAL INDEX</p><h2>긴 기록 속에서<br>제품을 먼저<br>알아보도록.</h2><p>두 캐릭터는 공식 마스코트가 아니라, 업데이트의 성격을 빠르게 구분하기 위해 이 아카이브에서 만든 안내자입니다.</p>
+        </div>
+        <div class="guide-visual chatgpt"><span>01 / CONVERSATION</span><img src="images/chatgpt-character.png" alt="ChatGPT 업데이트 안내 캐릭터"><div><strong>ChatGPT</strong><small>대화 · 음성 · 창작 · 협업</small></div></div>
+        <div class="guide-visual codex"><span>02 / BUILDER</span><img src="images/codex-character.png" alt="Codex 업데이트 안내 캐릭터"><div><strong>Codex</strong><small>코드 · 자동화 · 개발 도구</small></div></div>
+      </section>
 
-    <section class="chapter sources" id="sources" data-section="출처">
-      <header class="chapter-title reveal"><span>05</span><h2>무엇을 믿을까</h2><p>빠른 소문보다 확인 가능한 원문을 우선합니다.</p></header>
-      <div class="source-list reveal">
-        <details class="motion-card"><summary><span>01</span><strong>ChatGPT 공식 릴리스 노트</strong><i>열기</i></summary><div><p>ChatGPT 앱과 웹에서 바뀐 기능, 제공 범위, 출시 시점을 확인합니다.</p><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noreferrer">공식 문서 보기 ↗</a></div></details>
-        <details class="motion-card"><summary><span>02</span><strong>Codex 공식 변경 기록</strong><i>열기</i></summary><div><p>Codex 앱과 CLI의 기능 추가, 개선 사항, 모델 관련 변화를 확인합니다.</p><a href="https://developers.openai.com/codex/changelog" target="_blank" rel="noreferrer">공식 문서 보기 ↗</a></div></details>
-        <details class="motion-card"><summary><span>03</span><strong>OpenAI Codex GitHub 릴리스</strong><i>열기</i></summary><div><p>Codex CLI 버전별 배포일과 실제 변경 내역을 원문으로 대조합니다.</p><a href="https://github.com/openai/codex/releases" target="_blank" rel="noreferrer">공식 저장소 보기 ↗</a></div></details>
-      </div>
-    </section>
+      <section class="process section">
+        <header class="section-head"><span>03</span><p>하루의 흐름</p><i></i></header>
+        <div class="process-layout">
+          <div class="process-title"><p>WEEKDAYS · 09:40 KST</p><h2>한 번의 기록이<br>만들어지는 과정.</h2><div class="process-meter"><span></span></div><small data-process-status>01 / 예약 실행</small></div>
+          <ol class="process-steps">
+            <li class="active" data-process="0"><button><span>01</span><div><small>TRIGGER</small><h3>시간이 되면 시작합니다.</h3><p>평일 오전 9시 40분, 마지막 기록 이후의 발표를 확인합니다.</p></div></button></li>
+            <li data-process="1"><button><span>02</span><div><small>VERIFY</small><h3>공식 자료를 대조합니다.</h3><p>세 곳의 날짜와 내용을 비교해 새 소식과 중복을 구분합니다.</p></div></button></li>
+            <li data-process="2"><button><span>03</span><div><small>TRANSLATE</small><h3>사용자의 말로 바꿉니다.</h3><p>기술 용어를 줄이고 실제로 무엇이 달라지는지 설명합니다.</p></div></button></li>
+            <li data-process="3"><button><span>04</span><div><small>PUBLISH</small><h3>검증된 내용만 공개합니다.</h3><p>페이지를 갱신하고 오류를 검사한 뒤 웹에 반영합니다.</p></div></button></li>
+          </ol>
+        </div>
+      </section>
 
+      <section class="record section">
+        <header class="section-head light"><span>04</span><p>기록의 구조</p><i></i></header>
+        <div class="record-intro"><h2>원문 한 편이<br>네 겹의 정보가 됩니다.</h2><p>아래로 읽을수록 오른쪽 예시 카드가 완성됩니다.</p></div>
+        <div class="record-layout">
+          <div class="record-parts">
+            <article data-part="0"><span>01</span><div><h3>발표 날짜</h3><p>게시일과 실제 배포일이 다르면 구분합니다.</p></div></article>
+            <article data-part="1"><span>02</span><div><h3>핵심 변경</h3><p>조건과 제공 범위를 놓치지 않고 요약합니다.</p></div></article>
+            <article data-part="2"><span>03</span><div><h3>사용자 영향</h3><p>그래서 내 사용법이 어떻게 달라지는지 씁니다.</p></div></article>
+            <article data-part="3"><span>04</span><div><h3>공식 출처</h3><p>직접 확인할 수 있는 가장 가까운 원문을 연결합니다.</p></div></article>
+          </div>
+          <aside class="record-card">
+            <header><span>CODEX</span><time>2026.09.02</time></header><div><small>USAGE · ACCOUNT</small><h3>사용량을 한곳에서<br>확인할 수 있습니다.</h3><p>ChatGPT와 Codex에서 남은 사용량을 함께 확인해 작업 계획을 세우기 쉬워졌습니다.</p></div><footer><span>한눈에 보기</span><strong>확인 경로가 하나로 줄었습니다.</strong></footer>
+          </aside>
+        </div>
+      </section>
 
-    <section class="continuity reveal" aria-labelledby="continuity-title">
-      <p class="eyebrow">계속 쌓이는 기록</p><h2 id="continuity-title">오늘의 한 줄이<br /><span class="draw-underline">내일의 맥락</span>이 됩니다.</h2>
-      <div><p>하루의 공지만 보면 작은 변화처럼 보여도, 날짜순으로 이어 놓으면 제품이 어느 방향으로 가는지 보입니다.</p><p>검색보다 흐름을 읽을 수 있는 것. 이 아카이브가 단순한 뉴스 목록과 달라지고 싶은 지점입니다.</p></div>
-    </section>
+      <section class="sources section">
+        <header class="section-head"><span>05</span><p>신뢰의 기준</p><i></i></header>
+        <div class="sources-title"><h2>빠른 소식보다<br><em class="underline">확실한 출처를 먼저.</em></h2><p>각 항목을 열면 이 아카이브에서 무엇을 확인하는지 볼 수 있습니다.</p></div>
+        <div class="source-list">
+          <details><summary><span>01</span><strong>ChatGPT 공식 릴리스 노트</strong><i>+</i></summary><div><p>웹과 앱의 새 기능, 제공 범위와 출시 시점을 확인합니다.</p><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noreferrer">원문 보기 ↗</a></div></details>
+          <details><summary><span>02</span><strong>Codex 공식 변경 기록</strong><i>+</i></summary><div><p>Codex 앱과 CLI, 모델과 에이전트 기능의 변화를 확인합니다.</p><a href="https://developers.openai.com/codex/changelog" target="_blank" rel="noreferrer">원문 보기 ↗</a></div></details>
+          <details><summary><span>03</span><strong>OpenAI Codex GitHub Releases</strong><i>+</i></summary><div><p>버전별 배포일과 세부 변경 내역을 공식 저장소에서 대조합니다.</p><a href="https://github.com/openai/codex/releases" target="_blank" rel="noreferrer">원문 보기 ↗</a></div></details>
+        </div>
+      </section>
 
-    <section class="rules reveal" aria-labelledby="rules-title">
-      <div><p class="eyebrow">기록 원칙</p><h2 id="rules-title">자동으로 확인해도,<br />판단은 꼼꼼하게.</h2></div>
-      <ol><li class="motion-card"><span>1</span><p><b>공식 출처만 봅니다.</b> 날짜와 내용을 서로 대조합니다.</p></li><li class="motion-card"><span>2</span><p><b>중복은 만들지 않습니다.</b> 같은 발표는 하나의 기록으로 합칩니다.</p></li><li class="motion-card"><span>3</span><p><b>사람의 말로 씁니다.</b> 무엇이 달라지는지부터 설명합니다.</p></li></ol>
-    </section>
+      <section class="continuity">
+        <p>06 / THE ARCHIVE</p><h2>오늘의 한 줄이 쌓여<br><span>내일의 맥락</span>이 됩니다.</h2><div><p>하루의 공지만 보면 작은 변화처럼 보여도, 날짜순으로 이어 놓으면 제품이 어디로 가는지 보입니다.</p><p>Release Archive가 남기고 싶은 것은 뉴스의 양이 아니라 변화의 흐름입니다.</p></div>
+      </section>
 
-    <section class="closing reveal">
-      <p>결국 이 아카이브가 돌려주는 것은</p>
-      <h2>정보가 아니라,<br /><em>찾아 헤매던 시간</em>입니다.</h2>
-      <a href="index.html"><span class="stagger-target">최신 업데이트 읽으러 가기</span><span>→</span></a>
-    </section>
-  </main>
-  <footer><span>Release Archive</span><p>ChatGPT & Codex updates, translated for people.</p><a href="#main">맨 위로 ↑</a></footer>
+      <section class="closing">
+        <p>찾아 헤매는 시간은 줄이고,<br>변화를 이해하는 시간은 늘리도록.</p><h2>확인은 우리가 할게요.<br><em>당신은 필요한 것만 읽으세요.</em></h2><a class="stagger" href="index.html">최신 업데이트 보기 <span>→</span></a>
+      </section>
+    </main>
+    <footer><a href="index.html">RELEASE ARCHIVE</a><p>ChatGPT & Codex updates, translated for people.</p><a href="#content">TOP ↑</a></footer>
   </div></div>
-  <script src="vendor/gsap/gsap.min.js"></script>
-  <script src="vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="vendor/gsap/ScrollSmoother.min.js"></script>
-  <script src="about.js?v=20260902b"></script>
+  <script src="vendor/gsap/gsap.min.js"></script><script src="vendor/gsap/ScrollTrigger.min.js"></script><script src="vendor/gsap/ScrollSmoother.min.js"></script><script src="about.js?v=20260902c"></script>
 </body>
 </html>
