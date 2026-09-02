@@ -3270,3 +3270,9 @@ code {
     filter: drop-shadow(0 28px 28px rgba(0, 0, 0, 0.38)) brightness(1.04) !important;
   }
 }
+
+
+/* Keep date controls above animated cards and fixed decorative companions. */
+.detail-page .filter-bar { z-index: 40; overflow: visible; }
+.date-filters, .custom-select, .custom-select-trigger, .custom-select-menu { pointer-events: auto; }
+.custom-select.is-open { z-index: 50; }

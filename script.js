@@ -505,6 +505,7 @@ function closeSelects(except = null, immediate = false) {
 }
 
 function setupCustomSelect(select, options) {
+  if (!select) return;
   const type = select.dataset.dateFilter;
   const trigger = select.querySelector(".custom-select-trigger");
   const valueLabel = select.querySelector(".custom-select-value");
