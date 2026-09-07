@@ -138,6 +138,57 @@
       </div>
 
       <section class="update-list" aria-label="날짜별 업데이트">
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-09-04">2026-09-04</time><div class="badges"><span class="priority action">업데이트 권장</span><span class="tag">Codex</span></div></header>
+          <div class="update-body">
+            <h2>Codex CLI 0.153.3–0.153.4</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-04</dd></div>
+              <div><dt>모델 선택</dt><dd>GPT-6 Astra가 번들 모델 선택기에 올바르게 표시되고, 사용자가 모델을 따로 지정하지 않았을 때 번들 기본 모델로 선택되도록 수정됐습니다.</dd></div>
+              <div><dt>외부 제공자</dt><dd>0.153.3에서는 Amazon Bedrock의 Mantle 및 Runtime 글로벌·미국 경로 모델 목록에 GPT-6 Astra가 추가됐습니다.</dd></div>
+              <div><dt>안정성</dt><dd>Astra가 비동기 확인 질문을 사용할 때 현재 세션에서 해당 도구를 실제로 지원하는지 확인하고, 지원되는 텍스트 형식으로 질문하도록 안내가 바로잡혔습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>Codex에서 Astra가 보이지 않거나 기본 모델로 선택되지 않던 문제가 해결됐습니다. Bedrock을 쓰는 환경에서도 Astra를 찾기 쉬워졌고, 작업 도중 확인 질문이 잘못 호출되는 상황이 줄어듭니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.153.4</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.153.4" target="_blank" rel="noopener noreferrer">Codex 0.153.4 릴리스</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.153.3" target="_blank" rel="noopener noreferrer">Codex 0.153.3 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>GPT-6 Astra의 모델 선택기 노출과 기본 선택을 바로잡고, Bedrock 지원과 작업 중 확인 질문의 안정성을 개선한 연속 패치입니다. 0.153 계열을 사용한다면 0.153.4로 올리는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-09-03">2026-09-03</time><div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body">
+            <h2>GPT-6 Astra 도입과 플러그인·Sites 공유 확대</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-03</dd></div>
+              <div><dt>GPT-6 Astra</dt><dd>코딩, 조사, 컴퓨터 사용과 여러 단계의 복잡한 작업을 개선한 GPT-6 Astra가 제한된 일부 조직부터 순차적으로 제공됩니다. 문서·스프레드시트·프레젠테이션을 템플릿과 지시에 맞춰 만들고, 작업 중 요구사항이 바뀌어도 대응할 수 있습니다.</dd></div>
+              <div><dt>안전 확인</dt><dd>Astra에는 에이전트가 사용자의 지시를 잘못 이해했을 가능성을 살피는 추가 안전 모니터링이 포함됩니다. 문제가 의심되면 대화가 잠시 멈추거나 종료돼 사용자가 검토하고 진행 여부를 선택할 수 있습니다.</dd></div>
+              <div><dt>새 플러그인</dt><dd>Zendesk와 OneNote 플러그인이 베타로 추가됐습니다. 고객 지원 기록을 살펴 답변을 준비하거나, 노트에서 결정 사항과 할 일을 찾아 요약하고 지원되는 작업으로 노트를 갱신할 수 있습니다.</dd></div>
+              <div><dt>Sites 공유</dt><dd>대상 Site 소유자는 사이트를 공개하지 않고도 워크스페이스 밖의 지정된 사람에게 뷰어 권한을 줄 수 있습니다. 초대받은 사람은 사이트를 사용할 수 있지만 편집하거나 게시할 수는 없습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>Astra는 아직 일반 공개가 아니라 계정에 순차 적용됩니다. 사용 가능해지면 복합 작업의 완성도와 방향 수정 대응이 좋아지고, 조직에서는 고객 지원·노트 업무와 비공개 외부 사이트 공유 범위가 넓어집니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>GPT-6 Astra가 제한적으로 배포되기 시작했고 Zendesk·OneNote 플러그인과 Sites 외부 비공개 공유가 추가됐습니다. Astra는 계정별 제공 여부를 확인해야 하며, 위험 가능성이 감지되면 사용자의 검토를 위해 작업이 멈출 수 있습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-09-03">2026-09-03</time><div class="badges"><span class="priority feature">새 기능</span><span class="tag">Codex</span></div></header>
+          <div class="update-body">
+            <h2>Codex CLI 0.153.0–0.153.2</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-03</dd></div>
+              <div><dt>터미널 편집</dt><dd>Vim 모드에서 <code>u</code>로 실행 취소하고 <code>Ctrl+R</code>로 다시 실행할 수 있으며, 붙여 넣은 내용과 첨부파일을 포함한 초안 전체가 보존됩니다. 터미널 기록에는 전체 패치, 백그라운드 터미널로 보낸 입력과 완료된 개별 명령도 더 자세히 표시됩니다.</dd></div>
+              <div><dt>플러그인·설정</dt><dd>플러그인 CLI에서 원격 마켓플레이스의 플러그인을 조회·설치·제거할 수 있습니다. 자동 요약을 끄되 수동 <code>/recap</code>은 유지하는 <code>tui.auto_recap = false</code> 설정도 추가됐습니다.</dd></div>
+              <div><dt>사용량 안내</dt><dd>Plus와 Team 사용자는 약 5시간 사용량 구간에서 잔여 허용량이 절반 아래로 내려가면 이전보다 일찍 안내를 받습니다. 0.153.2에서는 Astra Fast 표시 문구가 실제 설정에 맞게 ‘2배 속도, 사용량 증가’로 수정됐으며 실행 방식 자체는 바뀌지 않았습니다.</dd></div>
+              <div><dt>안정성·보안</dt><dd>외부 app server 연결이 끊겨도 초안과 대화 기록을 보존한 채 다시 연결되고, 불확실하거나 대기 중인 제출은 검토 전까지 멈춥니다. Guardian 검토 기록과 계정별 MCP 승인 범위, 작업 재개·분기·압축 처리도 개선됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>터미널에서 실수한 편집을 되돌리기 쉬워지고 원격 플러그인 관리와 작업 기록 확인이 편해졌습니다. 연결이 끊긴 뒤에도 초안이 사라질 가능성이 줄고, 사용량 소진을 더 일찍 파악할 수 있습니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.153.4</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.153.0" target="_blank" rel="noopener noreferrer">Codex 0.153.0 릴리스</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.153.1" target="_blank" rel="noopener noreferrer">Codex 0.153.1 릴리스</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.153.2" target="_blank" rel="noopener noreferrer">Codex 0.153.2 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Vim 실행 취소·다시 실행, 원격 플러그인 관리, 자동 요약 설정과 조기 사용량 경고가 추가됐습니다. 재연결과 승인 기록 보존도 강화됐으며 최신 수정까지 받으려면 0.153.4로 업데이트하면 됩니다.</p></section>
+          </div>
+        </article>
         <article class="update" data-product="chatgpt">
           <header class="update-header">
             <time datetime="2026-09-01">2026-09-01</time>
