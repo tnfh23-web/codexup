@@ -140,6 +140,87 @@
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="chatgpt">
           <header class="update-header">
+            <time datetime="2026-09-10">2026-09-10</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT Work·Codex Data 플러그인</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-10</dd></div>
+              <div><dt>데이터 분석</dt><dd>연결된 업무 데이터를 바탕으로 질문에 답하고, 수치가 달라진 이유를 조사하거나 대화형 대시보드와 보고서를 만들 수 있는 Data 플러그인이 추가됐습니다.</dd></div>
+              <div><dt>조직 맥락</dt><dd>후속 질문으로 분석을 다듬고, 팀에서 사용하는 지표 정의와 업무 배경을 함께 반영할 수 있습니다.</dd></div>
+              <div><dt>이용 방법</dt><dd>플러그인 디렉터리에서 Data를 설치한 뒤 대화에서 <code>@Data</code>를 호출합니다. 연결할 데이터 원본에 따라 별도의 설정이나 인증이 필요할 수 있으며, 조회 범위는 연결 계정의 기존 권한을 따릅니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>여러 업무 시스템의 데이터를 직접 옮기지 않고 ChatGPT Work나 Codex에서 분석하고 시각화할 수 있습니다. 사용자가 원래 접근할 수 없는 데이터까지 새로 열리는 것은 아닙니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://openai.com/index/put-data-to-work/" target="_blank" rel="noopener noreferrer">OpenAI 제품 발표</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>연결된 업무 데이터를 질문으로 분석하고 대시보드·보고서로 만들 수 있는 Data 플러그인이 Work와 Codex에 추가됐습니다. 데이터 접근 범위는 기존 계정 권한을 그대로 따릅니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-09-10">2026-09-10</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Box·Dropbox·SharePoint를 Library에서 바로 사용</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-10</dd></div>
+              <div><dt>새 연결 원본</dt><dd>기존 Google Drive에 더해 Box, Dropbox와 SharePoint의 파일·폴더를 ChatGPT Library에서 탐색하고 검색할 수 있습니다.</dd></div>
+              <div><dt>대화에서 사용</dt><dd>파일을 다시 업로드하지 않아도 ‘Add from Library’나 @멘션으로 대화에 추가할 수 있습니다. 지원되는 파일은 대화 옆에 열어둔 채 요약·분석·비교하거나 새 결과물을 만들고, 인용을 눌러 원본으로 돌아갈 수 있습니다.</dd></div>
+              <div><dt>폴더 단위 작업</dt><dd>폴더를 선택해 그 안의 여러 파일을 함께 살펴보도록 요청할 수 있으며, 콘텐츠는 원래 저장 위치와 연결된 상태를 유지합니다.</dd></div>
+              <div><dt>제공 범위</dt><dd>웹의 Chat과 Work에서 Go·Plus·Pro·Business·Edu·Healthcare·Enterprise 사용자에게 순차 배포됩니다. 기존 파일 권한과 워크스페이스 관리 설정이 적용되며 모바일 지원은 추후 제공됩니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>회사나 개인 클라우드에 저장된 자료를 내려받고 다시 올리는 과정이 줄어듭니다. 계정별 순차 배포이므로 바로 보이지 않을 수 있고, 원본 서비스에서 허용된 파일만 사용할 수 있습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Box·Dropbox·SharePoint 파일을 Library에서 찾아 업로드 없이 대화에 쓰고, 원본 연결과 인용을 유지한 채 여러 파일을 함께 분석할 수 있습니다. 우선 웹에서 순차 배포됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-10">2026-09-10</time>
+            <div class="badges"><span class="priority feature">개발자 도구</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI Python SDK 0.154.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-10</dd></div>
+              <div><dt>설치 조건</dt><dd>Python 3.10 이상에서 <code>pip install --upgrade openai-codex==0.154.0</code>으로 설치하며, 같은 버전의 Codex CLI 실행 파일이 함께 제공됩니다.</dd></div>
+              <div><dt>추론·메시지</dt><dd><code>max</code>와 <code>ultra</code> 추론 강도를 사용할 수 있고, 동기·비동기 실행 중 외부 콘텐츠를 새 턴이나 진행 중인 일반 턴에 전달하는 <code>ExternalMessage</code>가 추가됐습니다. 외부 메시지는 사용자 권한을 새로 부여하지 않습니다.</dd></div>
+              <div><dt>재개·분기</dt><dd>재개하거나 분기할 때 저장된 턴을 결과에 포함하는 옵션, 새 턴 하나에만 서비스 등급을 지정하는 옵션과 출처 메타데이터가 추가됐습니다.</dd></div>
+              <div><dt>호환성</dt><dd>일부 훅 메타데이터 구조와 알림 형식이 바뀌었으며, 늦게 연결한 턴 핸들에는 이전 이벤트가 재생되지 않습니다. 사용자 지정 Codex 실행 파일은 새 기능을 위해 CLI 0.151.0 이상이어야 합니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>Python 애플리케이션에서 Codex 작업을 더 세밀하게 제어하고 진행 중인 작업에 외부 정보를 넣기 쉬워집니다. 기존 SDK를 올릴 때는 훅과 이벤트 처리 코드를 확인해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/python-v0.154.0" target="_blank" rel="noopener noreferrer">Python SDK 0.154.0 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Python SDK에서 max·ultra 추론, 진행 중인 턴에 외부 메시지 전달, 재개·분기 결과 제어가 추가됐습니다. 일부 이벤트와 훅 구조가 바뀌어 업그레이드 전 호환성 확인이 필요합니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-09">2026-09-09</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.154.0</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-09</dd></div>
+              <div><dt>작업 환경</dt><dd><code>--worktree</code> 또는 <code>/worktree</code>로 새 작업이나 분기 작업을 격리된 체크아웃에서 시작하고, 생성된 작업공간을 찾아 다시 이어갈 수 있는 실험 기능이 추가됐습니다.</dd></div>
+              <div><dt>작업 중 질문</dt><dd>Codex가 계속 일하는 동안 제안된 선택지나 직접 입력한 답으로 중간 질문에 응답할 수 있고, 작성 중이던 주 프롬프트 초안은 유지됩니다.</dd></div>
+              <div><dt>Windows·터미널</dt><dd>Windows 세션들이 백그라운드 Codex 서버를 공유하고 수명 주기 명령과 관리형 업데이트를 사용할 수 있습니다. Vim 편집에는 실행 취소와 반복을 지원하는 <code>R</code> 교체 모드가 추가됐고, 복사할 때 서식 유지와 <code>/copy</code> 범위도 개선됐습니다.</dd></div>
+              <div><dt>플러그인·안정성</dt><dd>실행 중인 세션이 새로 설치되거나 갱신된 플러그인 도구·스킬·훅을 다시 불러옵니다. MCP 로그인 갱신, 원격 재개·분기의 권한 보존, 다른 앱에서 열린 대화의 읽기 전용 표시와 자동 승인 검토도 개선됐습니다.</dd></div>
+              <div><dt>보안·호환성</dt><dd>신뢰가 확인되기 전에 작업공간이 제어하는 보조 프로그램을 실행하지 않도록 강화됐고, macOS 터미널 입력 주입을 차단합니다. 폐기된 <code>codex mcp-server</code> 진입점은 제거됐습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>여러 작업을 격리해 병행하고 작업 중 확인 질문에 끊김 없이 답하기 쉬워집니다. Windows 백그라운드 실행과 플러그인 갱신 안정성도 좋아지지만, 오래된 <code>codex mcp-server</code> 명령을 쓰는 자동화는 수정해야 합니다.</dd></div>
+              <div><dt>업데이트 방법</dt><dd><code>npm install -g @openai/codex@0.154.0</code></dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.154.0" target="_blank" rel="noopener noreferrer">Codex 0.154.0 릴리스</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>격리된 worktree 작업, 실행 중 질문 응답, Windows 공유 백그라운드 서버와 Vim 교체 모드가 추가됐습니다. 플러그인·MCP·재개 작업의 안정성과 보안도 강화됐습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
             <time datetime="2026-09-09">2026-09-09</time>
             <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
           </header>
