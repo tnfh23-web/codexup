@@ -140,6 +140,102 @@
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="chatgpt">
           <header class="update-header">
+            <time datetime="2026-09-18">2026-09-18</time>
+            <div class="badges"><span class="priority feature">앱 업데이트</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>iOS 1.2026.251: 폴더 생성·Writing Blocks와 Codex 작업 안정화</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-18</dd></div>
+              <div><dt>새 기능</dt><dd>iOS 파일 선택기에서 폴더를 바로 만들 수 있고, 여러 초안을 비교하거나 복사할 수 있는 Writing Blocks가 추가됐습니다.</dd></div>
+              <div><dt>Codex 작업</dt><dd>새 작업이 프로젝트별 워크트리 모드와 설정 환경을 기억합니다. 긴 대기 프롬프트는 짧게 접어 보여 주며, 다시 연 작업에서 대기 프롬프트가 사라지거나 오래된 상태로 보이던 문제와 워크트리 카드 연결 오류도 수정됐습니다.</dd></div>
+              <div><dt>기타 개선</dt><dd>일시적인 연결 중단 중 음성 통화 안정성, iPad의 프로젝트·환경·Git 컨트롤 정렬, 새 작업 시작 때 사고 시간이 초기화되던 문제를 개선했습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>iPhone과 iPad에서 문서 초안을 더 쉽게 다루고, Codex 작업을 다시 열거나 워크트리 작업을 시작할 때 상태와 설정이 더 안정적으로 이어집니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>iOS에서 폴더 생성과 Writing Blocks를 쓸 수 있고, Codex의 대기 프롬프트·워크트리 카드·프로젝트 설정 복원이 더 안정적으로 동작합니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-18">2026-09-18</time>
+            <div class="badges"><span class="priority improvement">오류 수정</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.155.1: 호환되지 않는 추론 요약 요청 수정</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-18</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.155.1</code></dd></div>
+              <div><dt>수정 내용</dt><dd>새 로컬 TUI 세션에서 추론 요약을 기본적으로 끄도록 되돌렸습니다. 추론 요약을 지원하지 않는 모델 제공자가 요청을 거부하던 문제를 막기 위한 변경입니다.</dd></div>
+              <div><dt>설정 유지</dt><dd>사용자가 추론 요약을 명시적으로 설정한 경우에는 기존 선택을 그대로 따릅니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>OpenAI 외 모델 제공자나 호환 API로 Codex CLI를 사용할 때 새 세션이 시작부터 실패할 가능성이 줄어듭니다. 0.155.0 사용자 중 요청 거부를 겪었다면 바로 업데이트하는 것이 좋습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.155.1" target="_blank" rel="noopener noreferrer">GitHub Release 0.155.1</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>추론 요약을 지원하지 않는 모델 제공자에서도 새 Codex CLI 세션이 정상적으로 시작되도록 기본 설정을 바로잡은 호환성 패치입니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-09-17">2026-09-17</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Microsoft Word 안에서 ChatGPT 사용</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-17</dd></div>
+              <div><dt>Word 연동</dt><dd>Microsoft Word의 ChatGPT 사이드바에서 메모를 초안으로 만들고, 문서를 요약하거나 선택한 문장을 고치며, 제목과 서식을 조정할 수 있습니다. Excel·PowerPoint와 같은 Microsoft 추가 기능을 사용합니다.</dd></div>
+              <div><dt>이용 범위</dt><dd>Free를 포함한 모든 ChatGPT 요금제에서 제공되며, Microsoft Marketplace에서 추가 기능을 설치한 뒤 ChatGPT 계정으로 로그인하면 됩니다.</dd></div>
+              <div><dt>사용량</dt><dd>각 요금제의 토큰 제한이 적용됩니다. 해당 요금제에 Codex와 프리미엄 기능이 포함돼 있다면 Word 사용량도 이들과 같은 공유 사용량 한도에서 차감됩니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>문서를 복사해 대화창에 옮기지 않고 Word 안에서 바로 작성·요약·교정할 수 있습니다. 다만 Codex를 자주 쓰는 사용자는 Word 작업도 같은 사용량을 소비하므로 잔여 한도를 함께 확인해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer">ChatGPT Work·Codex 요금 및 사용량</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>ChatGPT가 Word에 들어와 문서 작성·요약·교정을 바로 처리합니다. 모든 요금제에서 쓸 수 있지만, 포함된 플랜에서는 Codex와 같은 공유 사용량을 소비합니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-09-17">2026-09-17</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>하나의 대화에 여러 플러그인 계정 연결</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-17</dd></div>
+              <div><dt>연결 확대</dt><dd>Gmail·Google Calendar·Google Contacts에 먼저 제공됐던 다중 계정 연결이 다른 ChatGPT 플러그인으로 확대됐습니다.</dd></div>
+              <div><dt>활용 방법</dt><dd>개인용과 업무용 계정을 함께 연결해 한 대화에서 두 계정의 정보를 찾거나 계정별 작업을 이어서 처리할 수 있습니다.</dd></div>
+              <div><dt>이용 범위</dt><dd>웹, 모바일, 데스크톱의 모든 ChatGPT 요금제에서 사용할 수 있습니다. 실제로 연결 가능한 서비스와 작업 범위는 플러그인 및 워크스페이스 설정에 따라 달라질 수 있습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>개인 계정과 회사 계정을 오가며 같은 질문을 반복할 필요가 줄어듭니다. 서로 다른 계정의 데이터가 한 대화에 함께 들어올 수 있으므로 보내기 전 선택한 계정과 공유 범위를 확인하는 것이 좋습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>개인용·업무용 등 여러 계정을 같은 플러그인에 연결하고 한 대화에서 함께 사용할 수 있게 됐습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-17">2026-09-17</time>
+            <div class="badges"><span class="priority feature">대규모 업데이트</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.155.0: 실시간 음성·작업 관리·Touch ID</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-17</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.155.0</code></dd></div>
+              <div><dt>새 기능</dt><dd>지원되는 빌드에서 <code>/experimental</code>로 켤 수 있는 실험적 <code>/voice</code> 대화가 추가됐습니다. 실시간 자막과 마이크 제어를 제공하며, TUI 상태 줄에는 실시간 추론 요약과 작업 완료 시각이 표시됩니다.</dd></div>
+              <div><dt>작업·보안 관리</dt><dd>에이전트 개요에서 작업을 숨기거나 보관·삭제할 수 있고 워크트리 소유 정보를 확인할 수 있습니다. 지원되는 Mac에서는 로컬 TUI의 MCP 요청을 Touch ID로 확인할 수 있습니다.</dd></div>
+              <div><dt>운영 개선</dt><dd>앱 서버 데몬 업데이트 일정을 설정할 수 있고 재시작 뒤 저장된 작업과 활성 목표를 복구합니다. Amazon Bedrock 자격 증명 명령과 갱신도 지원하며, 대화 기록·MCP OAuth·자동 승인 검토·Windows WSL 샌드박스 관련 오류와 보안 문제를 함께 수정했습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>터미널에서 음성으로 Codex를 제어하고 여러 작업을 정리하기 쉬워졌으며, 장시간 실행 환경의 복구성과 인증 안전성이 높아졌습니다. 음성은 아직 실험 기능이므로 중요한 작업에서는 텍스트 기록과 결과를 함께 확인하는 편이 안전합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.155.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.155.0</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex CLI에 실험적 실시간 음성 대화, 작업 보관·삭제, Mac Touch ID 확인, 데몬 자동 업데이트와 복구 기능이 추가되고 여러 안정성·보안 문제가 수정됐습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
             <time datetime="2026-09-14">2026-09-14</time>
             <div class="badges"><span class="priority action">전환 필요</span><span class="tag chatgpt">ChatGPT</span></div>
           </header>
