@@ -140,6 +140,103 @@
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="chatgpt">
           <header class="update-header">
+            <time datetime="2026-09-23">2026-09-23</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Voice에서 플러그인·Work 작업 사용</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-23</dd></div>
+              <div><dt>플러그인 음성 사용</dt><dd>웹, iOS, Android의 Live 음성 대화에서 계정에 연결된 플러그인과 앱을 사용할 수 있습니다. 도구가 반환한 글 답변은 대화 화면에서 함께 확인할 수 있습니다.</dd></div>
+              <div><dt>Work 지원</dt><dd>웹과 모바일의 ChatGPT Work에서도 음성으로 문서·프레젠테이션·스프레드시트를 만들거나 연결 앱과 브라우저 작업을 요청할 수 있습니다. 통화를 끝내도 완료되지 않은 작업은 텍스트 모드에서 계속 진행됩니다.</dd></div>
+              <div><dt>이용 조건</dt><dd>Free·Go 사용자는 Chat에서 요금제가 지원하는 플러그인을 음성으로 쓸 수 있습니다. Work의 음성 기능은 Voice와 Work 이용 권한이 모두 필요하며 기존 앱 권한과 사용량 제한이 그대로 적용됩니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>화면을 계속 보지 않고도 연결된 서비스에서 정보를 찾거나 결과물을 만드는 작업을 말로 지시할 수 있습니다. 실제 실행 권한은 기존 플러그인 설정을 따르므로 민감한 작업 전에는 연결 계정과 승인 범위를 확인해야 합니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001274-chatgpt-voice" target="_blank" rel="noopener noreferrer">ChatGPT Voice 공식 안내</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Voice 대화에서 플러그인과 연결 앱을 사용할 수 있고, Work에서는 결과물 제작과 브라우저 작업도 음성으로 요청할 수 있습니다. 통화 뒤 미완료 작업은 텍스트로 이어집니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-23">2026-09-23</time>
+            <div class="badges"><span class="priority improvement">긴급 수정</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.156.1: GPT-6 Sol·Luna 선택 복구</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-23</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.156.1</code></dd></div>
+              <div><dt>수정 내용</dt><dd>Codex CLI 모델 카탈로그에 GPT-6 Sol과 GPT-6 Luna를 추가해 모델 선택기에서 고를 수 있게 했습니다. 사용량 한도에 도달했을 때 표시되는 모델 전환 안내도 GPT-6 Luna를 추천합니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>0.156.0에서 새 GPT-6 모델이 선택기에 보이지 않았다면 0.156.1로 업데이트해야 합니다. 빠르고 사용량 효율이 높은 대체 모델을 제안받는 흐름도 새 모델 기준으로 바뀝니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.156.1" target="_blank" rel="noopener noreferrer">GitHub Release 0.156.1</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>GPT-6 Sol·Luna가 Codex CLI 모델 선택기에 표시되도록 바로잡은 긴급 업데이트입니다. 0.156.0 사용자는 0.156.1로 올리는 것이 좋습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-22">2026-09-22</time>
+            <div class="badges"><span class="priority feature">새 모델</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>GPT-6 Sol·Luna, Codex와 ChatGPT Work에 출시</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-22</dd></div>
+              <div><dt>모델 용도</dt><dd>GPT-6 Sol은 복잡한 코딩과 에이전트 작업에, GPT-6 Luna는 반복적이고 처리량이 많은 집중 작업에 맞춰 제공됩니다. 두 모델은 Chat의 GPT 모델과 분리되어 Work와 Codex에서 사용합니다.</dd></div>
+              <div><dt>이용 대상</dt><dd>Plus·Pro·Business·Enterprise·Edu에 순차 제공되며 Free·Go 사용자는 데스크톱 앱에서 Luna를 쓸 수 있습니다. Enterprise는 관리자가 새 모델을 허용해야 하며 실제 노출은 배포와 워크스페이스 설정에 따라 달라집니다.</dd></div>
+              <div><dt>선택 방법</dt><dd>모델 선택기 또는 CLI의 <code>/model</code>을 사용합니다. 명령줄에서는 <code>codex --model gpt-6-sol</code> 또는 <code>codex --model gpt-6-luna</code>로 바로 시작할 수 있습니다.</dd></div>
+              <div><dt>사용량·가격</dt><dd>Plus의 5시간당 로컬 메시지 예상치는 Sol 15~150회, Luna 350~3,000회입니다. 100만 토큰당 Sol은 입력 50·캐시 입력 5·출력 250크레딧, Luna는 각각 2.5·0.25·12.5크레딧으로 안내됩니다. 작업 복잡도와 도구 사용에 따라 실제 소모량은 달라집니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>일상적이거나 복잡한 개발에는 Sol, 빠른 반복 작업에는 Luna를 선택해 품질과 사용량을 조절할 수 있습니다. 기존 GPT-5.6 계열보다 낮은 토큰 가격으로 제공되지만 저장된 모델 설정과 자동화는 자동으로 바뀌지 않을 수 있습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT &amp; Codex changelog</a><a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer">공식 가격·사용량 안내</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex와 Work에 GPT-6 Sol·Luna가 추가됐습니다. 복잡한 개발은 Sol, 빠르고 많은 반복 작업은 Luna가 적합하며 두 모델 모두 GPT-5.6 이전 모델보다 낮은 토큰 가격으로 안내됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-09-22">2026-09-22</time>
+            <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>대화에서 만드는 대화형 플래시카드</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-22</dd></div>
+              <div><dt>카드 생성</dt><dd>학습할 주제를 말하거나 노트를 업로드한 뒤 플래시카드로 바꿔 달라고 요청하면 대화형 학습 카드를 만들 수 있습니다.</dd></div>
+              <div><dt>복습 방식</dt><dd>카드를 눌러 답을 확인하고, 아는 내용은 체크하고 어려운 내용은 다시 연습 대상으로 표시할 수 있습니다. 순서를 섞어 다른 순서로 복습하는 기능도 제공합니다.</dd></div>
+              <div><dt>저장·이용 범위</dt><dd>만든 플래시카드는 Library에 자동 저장돼 나중에 다시 열거나 ChatGPT에 복습을 요청할 수 있습니다. 모든 ChatGPT 요금제의 웹과 모바일에서 제공됩니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>별도 학습 앱으로 내용을 옮기지 않고 첨부한 수업 노트나 대화 내용을 바로 반복 학습 자료로 바꿀 수 있습니다. 자동 생성된 답은 원본 자료와 대조해 정확성을 확인하는 것이 좋습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>주제나 업로드한 노트를 대화형 플래시카드로 만들고, 정답 확인·반복 연습·순서 섞기를 사용할 수 있습니다. 결과는 Library에 자동 저장됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-22">2026-09-22</time>
+            <div class="badges"><span class="priority feature">대규모 업데이트</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.156.0: 전체 화면 TUI·기본 음성·사용량 대시보드</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-22</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.156.0</code></dd></div>
+              <div><dt>터미널 경험</dt><dd><code>/tui</code>로 다음 실행부터 전체 화면 UI를 선택할 수 있으며 대화 기록 검색, 마우스 선택, 우클릭 복사를 지원합니다. 여섯 가지 테마와 Mermaid 다이어그램·수식 표시도 추가됐습니다.</dd></div>
+              <div><dt>음성·사용량</dt><dd>음성 대화가 기본 활성화되고 F8 전환, <code>/voice settings</code>, Linux·Windows용 오디오 런타임이 제공됩니다. <code>/usage</code>에서는 계정 사용량, 토큰 합계, 플러그인·스킬 활동을 확인할 수 있습니다.</dd></div>
+              <div><dt>작업 관리</dt><dd>에이전트 명령 센터에서 상태별 작업 필터와 워크트리 세션 생성을 지원하며 워크트리가 기본 활성화됩니다. <code>/daemon</code>으로 로컬 백그라운드 서버를 갱신하거나 <code>--no-daemon</code>으로 우회할 수 있습니다.</dd></div>
+              <div><dt>안정성·보안</dt><dd>중단된 작업의 스트리밍 답변 보존, tmux·SSH 클립보드, 세션 재개 시 Plan 모드, 프록시 로그인과 MCP 인증, 음성 누락 문제를 수정했습니다. Windows·Linux·macOS 샌드박스 격리 취약점도 보완했습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>터미널에서 음성, 시각 자료, 사용량 확인과 여러 작업 관리가 한층 쉬워졌습니다. 다만 새 GPT-6 모델이 선택기에 보이지 않는 문제는 0.156.1에서 수정됐으므로 설치 시 최신 패치 버전을 사용하는 것이 좋습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.156.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.156.0</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>전체 화면 터미널 UI, 기본 음성 대화, 사용량 대시보드, 워크트리 작업 관리와 다이어그램 표시가 추가됐습니다. 보안·복구·클립보드 오류도 함께 수정됐으며 최신 0.156.1 사용이 권장됩니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
             <time datetime="2026-09-21">2026-09-21</time>
             <div class="badges"><span class="priority feature">새 기능</span><span class="tag chatgpt">ChatGPT</span></div>
           </header>
