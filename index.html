@@ -139,6 +139,78 @@
 
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-10-01">2026-10-01</time>
+            <div class="badges"><span class="priority feature">쇼핑 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT 쇼핑에 가상 착용·즐겨찾기 추가</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-10-01</dd></div>
+              <div><dt>가상 착용</dt><dd>의류와 액세서리 상품에 표시되는 Try on 버튼을 눌러 셀카를 촬영하거나 업로드하면 ChatGPT Images가 착용 모습을 생성합니다. 참고 사진은 다음 착용에도 사용할 수 있도록 저장되며 설정 → 개인화 → 참고 사진에서 변경하거나 삭제할 수 있습니다.</dd></div>
+              <div><dt>상품 정리</dt><dd>마음에 드는 상품을 즐겨찾기에 저장하거나 폴더로 정리할 수 있습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>웹과 모바일에서 옷·액세서리를 구매하기 전에 착용 모습을 살펴보고 관심 상품을 모아둘 수 있습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>셀카로 옷·액세서리를 가상 착용해 보고 마음에 드는 상품을 저장할 수 있습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-10-01">2026-10-01</time>
+            <div class="badges"><span class="priority feature">모바일 기능</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT 카메라로 여러 쪽을 한 번에 스캔</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-10-01</dd></div>
+              <div><dt>주요 변경</dt><dd>휴대전화 카메라에서 연속으로 촬영한 메모와 문서 여러 쪽을 하나의 PDF로 자동 결합해 대화에 첨부할 수 있습니다. 카메라의 점 세 개 메뉴에서 Scan을 선택합니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>종이 문서 여러 장을 따로 촬영하고 합치는 수고가 줄어듭니다. iOS에서 순차 제공됩니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>iPhone에서 문서 여러 쪽을 연속 촬영해 하나의 PDF로 대화에 올릴 수 있습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-10-01">2026-10-01</time>
+            <div class="badges"><span class="priority feature">기능 업데이트</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.160.0: 이전 작업 탐색과 실행 안정성 개선</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-10-01</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.160.0</code></dd></div>
+              <div><dt>주요 변경</dt><dd>에이전트 명령 센터에서 이전 작업을 더 볼 수 있고, 정책이 허용하면 프로젝트 밖에서도 작업 공간 기본 설정으로 세션을 시작할 수 있습니다. 재개할 때 저장된 권한을 복원합니다. 지원되는 Linux X11 터미널에서는 전체 화면 대화의 텍스트를 선택해 가운데 클릭으로 붙여넣을 수 있습니다.</dd></div>
+              <div><dt>안정성</dt><dd>연결이 끊긴 뒤 전송되지 않은 대기 메시지를 중복 없이 재개하고, Windows 샌드박스·백그라운드 콘솔 창, 세션 기록과 설정 유지, 데이터베이스 연결 오류를 개선했습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>오래된 작업을 찾고 세션을 다시 시작하기 쉬워지며, 연결 끊김이나 Windows 실행 환경에서 작업이 멈추는 문제가 줄어듭니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.160.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.160.0</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>이전 작업 탐색과 세션 재개가 편해지고, 끊긴 연결·Windows 실행 관련 오류가 개선됐습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-09-30">2026-09-30</time>
+            <div class="badges"><span class="priority improvement">패치 릴리스</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.159.3: 계정 보안 설정 알림</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-09-30</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.159.3</code></dd></div>
+              <div><dt>주요 변경</dt><dd>ChatGPT 계정으로 로그인한 적격 로컬 세션에서 계정 보안 설정을 완료하도록 안내하는 선택적 알림을 표시할 수 있습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>보안 설정을 마치지 않은 사용자가 필요한 설정을 확인하기 쉬워집니다. 적용 대상이 아니거나 이미 완료했다면 알림이 표시되지 않을 수 있습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.159.3" target="_blank" rel="noopener noreferrer">GitHub Release 0.159.3</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>일부 로컬 Codex 세션에서 ChatGPT 계정 보안 설정을 마치도록 알림을 받을 수 있습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
           <header class="update-header"><time datetime="2026-09-29">2026-09-29</time><div class="badges"><span class="priority important">요금·사용량</span><span class="tag chatgpt">ChatGPT</span></div></header>
           <div class="update-body"><h2>월 500달러 Pro 신설·Pro 200 이용량 변경</h2><dl class="details">
             <div><dt>발표일</dt><dd>2026-09-29</dd></div>
