@@ -138,6 +138,41 @@
       </div>
 
       <section class="update-list" aria-label="날짜별 업데이트">
+        <article class="update" data-product="codex">
+          <header class="update-header">
+            <time datetime="2026-10-05">2026-10-05</time>
+            <div class="badges"><span class="priority improvement">패치 릴리스</span><span class="tag codex">Codex</span></div>
+          </header>
+          <div class="update-body">
+            <h2>Codex CLI 0.160.1: 원격 MCP 서버 실행 환경 오류 수정</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-10-05</dd></div>
+              <div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.160.1</code></dd></div>
+              <div><dt>주요 변경</dt><dd>원격 stdio MCP 서버를 시작할 때 별도로 환경 변수를 지정해도 Windows 실행기의 필수 환경 변수인 SYSTEMROOT, TEMP, TMP가 유지되도록 수정했습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>Windows 실행기를 거쳐 Unix 호스트의 원격 MCP 서버를 사용하는 환경에서 서버가 시작되지 않던 문제를 줄입니다. 일반적인 로컬 작업에는 영향이 없을 수 있습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.160.1" target="_blank" rel="noopener noreferrer">GitHub Release 0.160.1</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>특정 원격 MCP 서버가 실행되지 않던 환경 변수 오류를 고쳤습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header">
+            <time datetime="2026-10-02">2026-10-02</time>
+            <div class="badges"><span class="priority feature">이용 대상 확대</span><span class="tag chatgpt">ChatGPT</span></div>
+          </header>
+          <div class="update-body">
+            <h2>ChatGPT 금융 기능, 미국 Free·Go 사용자에게 확대</h2>
+            <dl class="details">
+              <div><dt>발표일</dt><dd>2026-10-02</dd></div>
+              <div><dt>주요 변경</dt><dd>ChatGPT의 Finances 기능을 미국의 Free·Go 사용자에게도 웹, iOS, Android에서 순차 제공하기 시작했습니다. 금융 계좌를 안전하게 연결해 지출, 절약 방법, 투자 현황에 관한 질문을 할 수 있습니다.</dd></div>
+              <div><dt>사용자 영향</dt><dd>미국의 무료 및 Go 요금제 사용자도 자신의 금융 정보를 바탕으로 답변을 받을 수 있습니다. 한국 등 다른 지역 제공 여부는 이번 발표에 포함되지 않았습니다.</dd></div>
+            </dl>
+            <p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001222-finances-in-chatgpt" target="_blank" rel="noopener noreferrer">Finances 안내</a></p>
+            <section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>미국 Free·Go 사용자도 연결한 금융 정보를 바탕으로 지출과 투자 내역을 살펴볼 수 있습니다.</p></section>
+          </div>
+        </article>
+
         <article class="update" data-product="chatgpt">
           <header class="update-header">
             <time datetime="2026-10-01">2026-10-01</time>
