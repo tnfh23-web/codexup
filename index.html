@@ -139,6 +139,77 @@
 
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-09">2026-10-09</time><div class="badges"><span class="priority improvement">패치 릴리스</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.162.1: 질문 화면 충돌과 시작 오류 수정</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-09</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.162.1</code></dd></div>
+            <div><dt>주요 변경</dt><dd>여러 줄로 된 비동기 질문에서 터미널 화면이 종료되던 오류를 고치고, 줄바꿈과 링크 주소가 온전하게 보이도록 했습니다. 실행 중인 백그라운드 서버와 CLI 기본 기능 설정이 달라도 시작을 막지 않도록 호환성 검사를 조정했습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>CLI에서 질문을 받거나 기존 백그라운드 서버에 연결할 때 작업이 끊기는 일이 줄어듭니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.162.1" target="_blank" rel="noopener noreferrer">GitHub Release 0.162.1</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>여러 줄 질문과 백그라운드 서버 연결에서 생기던 CLI 오류를 수정했습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-09">2026-10-09</time><div class="badges"><span class="priority feature">베타 기능</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex 입력창에 다음 메시지 제안 베타 도입</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-09</dd></div><div><dt>주요 변경</dt><dd>Codex가 현재 대화에 맞는 다음 메시지를 입력창에 제안할 수 있습니다. Tab으로 받아들인 뒤 검토하거나 수정해 보낼 수 있으며, 수락만으로 자동 전송되지는 않습니다.</dd></div>
+            <div><dt>제공 대상</dt><dd>최신 Codex 데스크톱 앱의 개인 Pro 사용자(만 18세 이상)에게 베타로 제공됩니다. GPT-6 Astra 또는 GPT-6.1 Sol을 사용하는 로컬·SSH 작업에서 지원합니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>반복해서 후속 요청을 입력하는 시간을 줄일 수 있습니다. 제안 생성은 베타 기간 이용량·크레딧을 쓰지 않지만 실제로 보낸 메시지는 일반 이용량에 포함됩니다. 설정에서 제안을 끌 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001601-composer-predictions-in-codex" target="_blank" rel="noopener noreferrer">기능 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex가 다음 질문을 제안하지만, 검토하고 직접 보내기 전에는 전송되지 않습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-08">2026-10-08</time><div class="badges"><span class="priority feature">기능 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.162.0: 작업 고정과 대화 복사 기능 추가</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-08</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.162.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>지원되는 환경에서 작업을 고정하고, <code>/copy</code>로 대화 내용을 탐색·복사할 수 있습니다. 관리형 Git 작업트리를 만들고 나열하는 도구도 기능이 켜진 신뢰할 수 있는 로컬 프로젝트에 추가됐습니다.</dd></div>
+            <div><dt>안정성</dt><dd>Windows 파일 접근과 Linux 샌드박스 시작, 서버 재시도 동작 등을 개선했습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>자주 보는 작업을 찾고 대화 내용을 옮기기 쉬워졌으며 일부 운영체제의 실행 오류가 줄어듭니다. 기능별 제공 여부는 설정과 환경에 따라 다릅니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.162.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.162.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>CLI에서 작업 고정·대화 복사가 편해지고 플랫폼별 오류가 개선됐습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-08">2026-10-08</time><div class="badges"><span class="priority feature">모델 이용</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>GPT-6.1 Sol Ultrafast, Codex·ChatGPT Work에 추가</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-08</dd></div><div><dt>주요 변경</dt><dd>GPT-6.1 Sol을 더 빠르게 출력하는 Ultrafast 모드가 Codex와 ChatGPT Work에 추가됐습니다. Pro 500과 적격 Enterprise·Edu 요금제에서 제공되며 Enterprise는 관리자가 켜야 합니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>해당 요금제 사용자는 긴 작업에서 더 빠른 응답을 선택할 수 있습니다. 사용 전 계정의 이용량과 크레딧 차감 조건을 확인해야 합니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://learn.chatgpt.com/docs/whats-new" target="_blank" rel="noopener noreferrer">OpenAI What's new</a><a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer">요금·사용량 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Pro 500 등 적격 계정에서 GPT-6.1 Sol의 빠른 출력 모드를 선택할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-10-07">2026-10-07</time><div class="badges"><span class="priority feature">모델 업데이트</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT에 GPT-6와 Intelligent UI 도입</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-07</dd></div><div><dt>주요 변경</dt><dd>답변에 글뿐 아니라 비교 화면, 도표, 계산기나 게임 같은 대화형 요소를 질문에 맞게 구성할 수 있습니다. 도구를 계속 사용하는 중에도 먼저 답변을 보여주고 추가 결과를 이어서 제공할 수 있습니다.</dd></div>
+            <div><dt>제공 대상</dt><dd>Plus·Pro·Business·Enterprise에 먼저 순차 제공되고 Free·Go에는 다음 날부터 확대됩니다. 일반 Chat에서는 유료 계정에 GPT-6 Sol, Free·Go에 GPT-6 Luna가 사용됩니다. Pro의 Astra 추론 옵션과 Work·Codex 모델은 이번 변경 대상이 아닙니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>질문에 따라 읽기 쉬운 시각 자료나 직접 조작할 수 있는 도구를 받을 수 있습니다. 실제 제공 시점은 요금제와 조직 설정에 따라 다릅니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener noreferrer">OpenAI 발표</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>ChatGPT가 질문에 맞춰 글·시각 자료·대화형 도구를 함께 보여줄 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-07">2026-10-07</time><div class="badges"><span class="priority feature">모바일 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>iOS 앱에서 Codex 작업 링크 바로 열기</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-07</dd></div><div><dt>버전</dt><dd>ChatGPT for iOS 1.2026.272</dd></div>
+            <div><dt>주요 변경</dt><dd>iPhone에서 Codex 작업 링크를 바로 열 수 있고, 응답 안에 Page 미리보기가 표시됩니다. 승인 선택 화면과 플러그인 메뉴를 정리하고 긴 대화의 표시·스트리밍 및 작업트리 동기화 오류를 개선했습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>휴대전화에서 Codex 작업으로 이동하거나 진행 중인 내용을 확인하기 쉬워집니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT·Codex changelog</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>iOS에서 Codex 작업 링크를 곧바로 열고 긴 작업을 더 안정적으로 볼 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-07">2026-10-07</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.161.0: MCP 로그인과 음성 장치 선택</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-07</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.161.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>터미널 작업 중 <code>/mcp login &lt;name&gt;</code>으로 MCP 서버에 로그인할 수 있고, 음성 대화용 마이크·스피커를 선택해 저장할 수 있습니다. 번들 모델 목록의 기본 모델도 GPT-6.1 Sol로 바뀌었습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>연결 도구 인증과 음성 장치 설정이 간편해집니다. 기본 모델 변경은 해당 모델 목록을 사용하는 새 세션에 적용됩니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://github.com/openai/codex/releases/tag/rust-v0.161.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.161.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>CLI 안에서 MCP에 로그인하고 음성 입출력 장치를 고를 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-10-06">2026-10-06</time><div class="badges"><span class="priority feature">파일 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT에 오디오 파일 업로드 기능 추가</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-06</dd></div><div><dt>주요 변경</dt><dd>지원되는 녹음 파일을 대화에 첨부해 전사하거나 요약하고, 회의·인터뷰·강의 내용을 바탕으로 질문할 수 있습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>유료 ChatGPT 구독 및 워크스페이스에서 음성 기록을 메모나 후속 이메일 초안으로 정리할 수 있습니다. 지역·설정·앱 버전·모델에 따라 제공 여부가 다르고 전사에는 오류가 있을 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt" target="_blank" rel="noopener noreferrer">오디오 업로드 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>녹음 파일을 올려 전사·요약하고 내용에 관해 질문할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
           <header class="update-header">
             <time datetime="2026-10-05">2026-10-05</time>
             <div class="badges"><span class="priority improvement">패치 릴리스</span><span class="tag codex">Codex</span></div>
