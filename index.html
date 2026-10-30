@@ -139,6 +139,57 @@
 
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-29">2026-10-29</time><div class="badges"><span class="priority important">이용량 확대</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Pro·Business Premium의 Work·Codex 포함 이용량 확대</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-29</dd></div><div><dt>주요 변경</dt><dd>Pro 100과 Pro 500의 ChatGPT Work·Codex 포함 이용량이 기존의 두 배로 늘었습니다. Pro 200은 앞서 예고했던 이용량 축소를 취소해 기존의 높은 한도를 유지하며, 낮은 한도가 적용되던 구독자는 10월 29일부터 한도가 두 배로 늘어 같은 수준이 됩니다. Business Premium의 포함 이용량도 확대됩니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>해당 요금제 사용자는 추가 크레딧을 구매하기 전에 더 많은 Work·Codex 작업을 할 수 있습니다. 계정별 실제 남은 이용량과 재설정 시점은 이용량 화면에서 확인해야 합니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener noreferrer">요금·사용량 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Pro 100·500의 Work·Codex 포함 이용량이 두 배로 늘고 Pro 200의 축소 계획은 취소됐습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-29">2026-10-29</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.166.0: 대화 선택·검색과 네트워크 진단 개선</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-29</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.166.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>키보드로 대화 기록의 단어·줄·페이지를 선택하고 검색할 수 있습니다. <code>codex queue --resume</code>으로 메시지를 대기열에 넣은 뒤 닫혀 있던 작업을 다시 열 수 있고, <code>codex doctor --network-only</code>로 연결 문제만 집중 점검할 수 있습니다.</dd></div>
+            <div><dt>안정성</dt><dd>작업을 재개하거나 분기할 때 승인·권한 설정을 보존하고, 작성 중인 메시지를 복구할 때 로컬 이미지 첨부도 유지하도록 수정했습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>긴 대화에서 필요한 부분을 찾고 복사하기 쉬워지며 네트워크 연결 오류와 작업 재개 문제를 확인하기 편해집니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.166.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.166.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>CLI의 긴 대화 탐색과 연결 진단이 편해지고 작업 재개 시 설정 보존도 개선됐습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-10-28">2026-10-28</time><div class="badges"><span class="priority feature">베타 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>미국 Pro 사용자에게 dot 문자 대화 베타 시작</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-28</dd></div><div><dt>주요 변경</dt><dd>미국의 ChatGPT Pro 사용자에게 dot과 iMessage 또는 Android RCS로 문자를 주고받는 기능이 베타로 순차 제공됩니다. dot이 관련 진행 상황을 먼저 문자로 알려줄 수도 있으며, 앱에서 사용하던 기억과 플러그인 맥락을 이어받습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>ChatGPT 앱을 열지 않고도 자신의 dot에게 메시지를 보내거나 알림을 받을 수 있습니다. dot은 등록된 사용자와만 문자를 주고받으며 다른 문자 대화에 접근하지 않습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://learn.chatgpt.com/docs/whats-new/dots-october-28-2026" target="_blank" rel="noopener noreferrer">OpenAI What's new</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>미국 Pro 사용자는 dot에게 문자로 말하고 진행 소식을 문자로 받을 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-10-28">2026-10-28</time><div class="badges"><span class="priority feature">구독 혜택</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>적격 Pro·Business 구독에 OpenAI API 크레딧 혜택</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-28</dd></div><div><dt>주요 변경</dt><dd>적격 Pro 100·200·500과 유료 Business 구독자가 연결된 API 조직에 프로모션 API 크레딧을 신청할 수 있습니다. 월 기준 Pro는 요금제에 따라 미화 100·200·500달러, Business는 유료 좌석 종류별 금액을 합산해 월 최대 500달러가 제공됩니다. 첫 지급액은 남은 결제 기간에 따라 달라집니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>API 앱과 에이전트를 만드는 비용을 줄일 수 있지만 구독만으로 자동 지급되지는 않아 별도 활성화가 필요합니다. 이 크레딧은 ChatGPT나 계정 로그인 Codex의 이용 한도를 늘리지 않으며 API 키로 쓰는 Codex 사용에도 적용되지 않습니다. 미사용분은 다음 결제 기간으로 이월되지 않습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions" target="_blank" rel="noopener noreferrer">API 크레딧 혜택 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>적격 Pro·Business 구독자는 API 크레딧을 신청할 수 있지만 ChatGPT·Codex 이용 한도와는 별개입니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-10-27">2026-10-27</time><div class="badges"><span class="priority feature">연결 앱</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT에 iCloud Mail·Calendar 연결 추가</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-27</dd></div><div><dt>주요 변경</dt><dd>iCloud Mail과 Calendar를 ChatGPT에 연결해 이메일을 찾고 받은편지함의 내용을 확인하거나 일정을 조회·수정할 수 있습니다. 모든 ChatGPT 요금제에서 웹·데스크톱 앱·iOS로 제공됩니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>iCloud에 있는 메일과 일정 정보를 대화 중 활용할 수 있습니다. 연결 시 요구되는 계정 인증과 접근 권한을 확인해야 합니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt" target="_blank" rel="noopener noreferrer">연결 앱 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>iCloud 메일과 일정을 ChatGPT에 연결해 찾고 관리할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-10-27">2026-10-27</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.165.0: 저장소별 작업 탐색과 새 모델 지원</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-10-27</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.165.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>저장한 작업을 고르는 화면에 저장소 필터가 생기고 작업 목록이 디렉터리별로 묶입니다. GPT-6.1 Terra가 모델 목록에 추가되고, 지원 모델은 대화 중 추론 수준 변경을 기본적으로 지원합니다. Google Cloud Vertex AI 제공자도 내장됐습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>여러 저장소와 작업트리를 오갈 때 원하는 작업을 찾기 쉬워지고, 환경에 맞는 모델과 추론 수준을 더 유연하게 선택할 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex 공식 changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.165.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.165.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>CLI에서 저장소별 작업 탐색이 쉬워지고 GPT-6.1 Terra를 선택할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
           <header class="update-header"><time datetime="2026-10-26">2026-10-26</time><div class="badges"><span class="priority feature">새 모델</span><span class="tag codex">Codex</span></div></header>
           <div class="update-body"><h2>GPT-6.1 Terra, Codex·ChatGPT Work에 도입</h2><dl class="details">
             <div><dt>발표일</dt><dd>2026-10-26</dd></div><div><dt>주요 변경</dt><dd>이미지와 화면을 이해하고 브라우저·데스크톱·앱에서 후속 작업을 수행하는 데 적합한 GPT-6.1 Terra가 추가됐습니다. Plus·Pro·Business·Enterprise·Edu에 순차 제공되며 일반 Chat에서는 사용할 수 없습니다.</dd></div>
