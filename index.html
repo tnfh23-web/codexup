@@ -138,6 +138,31 @@
       </div>
 
       <section class="update-list" aria-label="날짜별 업데이트">
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-11-06">2026-11-06</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.167.0: 작업 확인과 실행 환경 전환 개선</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-06</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.167.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd><code>codex agents --no-daemon</code>으로 에이전트 작업을 확인하고 읽지 않은 결과를 구분할 수 있습니다. 터미널의 작업 선택 화면에서 연결된 실행 환경을 바꿀 때 작성 중인 문구가 유지됩니다. 지원 터미널에서는 첨부할 로컬 이미지를 미리 볼 수도 있습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>여러 작업과 실행 환경을 오갈 때 결과를 놓치거나 작성 중인 요청을 다시 입력할 일이 줄어듭니다. 작업을 재개할 수 없는 경우에도 기존 대화를 읽고 새 대화로 이어 갈 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0" target="_blank" rel="noopener noreferrer">GitHub Releases</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex CLI에서 여러 에이전트의 새 결과와 실행 환경을 더 쉽게 관리하고 로컬 이미지를 미리 볼 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-11-04">2026-11-04</time><div class="badges"><span class="priority feature">이미지 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT Images 2.6과 GIF·참조 이미지 기능 발표</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-04</dd></div><div><dt>주요 변경</dt><dd>새 이미지 생성 모델 Images 2.6은 생성 속도와 편집 중 세부 모습 유지가 개선됐습니다. 짧은 반복 애니메이션 GIF를 만드는 기능이 순차 도입되고, 저장한 참조 이미지를 나중의 대화에서 다시 사용할 수 있습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>배경을 바꾸면서 인물의 옷차림 같은 특징을 유지하기 쉬워집니다. 같은 사진을 다시 올리지 않고 참조할 수 있으며, GIF 기능은 제공되는 계정에서 이용할 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>이미지 생성·편집이 개선되고 GIF와 저장된 참조 이미지 재사용 기능이 도입됩니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-11-04">2026-11-04</time><div class="badges"><span class="priority feature">dot 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>iOS 알림에서 dot에게 답장하고 화면 일부를 지정</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-04</dd></div><div><dt>주요 변경</dt><dd>iOS에서는 dot 알림에 바로 답하거나 다른 앱의 콘텐츠를 dot에게 공유할 수 있습니다. 데스크톱에서는 브라우저 페이지나 파일의 특정 부분을 지정하는 주석 기능이 순차 제공됩니다. 일부 Enterprise·Edu·Healthcare 작업 공간에서도 dot을 활성화할 수 있습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>휴대전화에서 대화를 더 빨리 이어 가고, 데스크톱에서는 검토할 위치를 정확히 알려줄 수 있습니다. 조직 사용자는 관리자 설정과 제공 범위를 확인해야 합니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/whats-new/november-2-6-2026" target="_blank" rel="noopener noreferrer">OpenAI What's new</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>dot과의 iOS 대화가 간편해지고 데스크톱에서는 페이지·파일의 원하는 부분을 짚어 줄 수 있습니다.</p></section></div>
+        </article>
+
         <article class="update" data-product="chatgpt">
           <header class="update-header"><time datetime="2026-10-30">2026-10-30</time><div class="badges"><span class="priority feature">모바일 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
           <div class="update-body"><h2>ChatGPT 모바일 앱에서 계정 두 개 간 전환 지원</h2><dl class="details">
