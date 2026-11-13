@@ -139,6 +139,49 @@
 
       <section class="update-list" aria-label="날짜별 업데이트">
         <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-11-13">2026-11-13</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.169.0: 여러 보조 대화와 지난 작업 검색</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-13</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.169.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>선택해서 켜는 터미널 작업 공간에서 여러 보조 대화 탭을 열고, Codex를 다시 시작한 뒤에도 저장된 로컬 보조 대화를 다시 열 수 있습니다. 에이전트 명령 센터에서는 이름·요청 미리보기·작업 폴더로 지난 작업을 찾을 수 있습니다. 전체 화면 대화 기록의 완료된 활동을 접는 설정도 추가됐습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>여러 작업을 나란히 진행하고 오래된 작업을 다시 찾기 쉬워집니다. 보조 대화와 Cloud 연결 기능은 사용자가 선택해 켜야 하며, 일부 기능은 운영체제에 따라 다릅니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.169.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.169.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>터미널에서 여러 보조 대화를 관리하고 지난 작업을 더 쉽게 검색할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-11-13">2026-11-13</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>Codex CLI 0.168.0: 모델 제공자 선택과 나란히 대화</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-13</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.168.0</code></dd></div>
+            <div><dt>주요 변경</dt><dd>터미널의 모델 제공자 목록을 살펴보고 새 대화의 기본 제공자를 고를 수 있습니다. <code>features.tui_workspace</code>를 켜면 본 대화 옆에 보조 대화를 배치하고 크기를 조절할 수 있습니다. 선택 기능인 <code>features.image_generation_animation</code>으로 애니메이션 GIF 생성·편집도 지원합니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>여러 모델 연결을 관리하고 두 대화를 나란히 보며 작업할 수 있습니다. 기존 대화는 기본 제공자를 바꿔도 저장된 제공자를 유지하며, 보조 대화와 GIF 기능은 직접 활성화해야 합니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">Codex changelog</a><a href="https://github.com/openai/codex/releases/tag/rust-v0.168.0" target="_blank" rel="noopener noreferrer">GitHub Release 0.168.0</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>Codex CLI에서 새 대화의 모델 제공자를 고르고 선택 기능으로 대화를 나란히 열 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-11-10">2026-11-10</time><div class="badges"><span class="priority important">음성 정책</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT의 Advanced·Standard 음성 12월 11일 종료 예고</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-10</dd></div><div><dt>주요 변경</dt><dd>2026년 12월 11일부터 음성 설정의 Advanced와 Standard 모델을 선택할 수 없게 됩니다. 기존에 두 모델을 선택한 사용자는 GPT-Live로 전환됩니다. 실시간 영상과 화면 공유는 GPT-Live가 이를 지원할 때까지 Advanced 음성으로 계속 제공됩니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>기존 음성 대화 기록은 남아 텍스트나 음성으로 이어 갈 수 있지만, 12월 11일 이후 음성 모델 선택은 달라집니다. 그전까지는 Advanced와 Standard 음성을 계속 쓸 수 있습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001638-retiring-advanced-and-standard-voice-in-chatgpt" target="_blank" rel="noopener noreferrer">음성 모델 종료 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>12월 11일부터 기존 Advanced·Standard 음성 선택이 종료되고 기본 음성이 GPT-Live로 바뀝니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="chatgpt">
+          <header class="update-header"><time datetime="2026-11-10">2026-11-10</time><div class="badges"><span class="priority feature">비즈니스 기능</span><span class="tag chatgpt">ChatGPT</span></div></header>
+          <div class="update-body"><h2>ChatGPT에 업체 정보 관리용 Business Hub 추가</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-10</dd></div><div><dt>주요 변경</dt><dd>업체 소유자나 권한 있는 담당자가 ChatGPT 웹의 Business Hub에서 업체를 등록·인증하고 정보를 관리할 수 있습니다. 인증 후 제품 목록을 연결하고 언급·웹사이트 클릭 같은 통계를 볼 수 있습니다. 미국의 자격을 갖춘 온라인 업체는 고객 질문에 답하는 비즈니스 에이전트도 만들어 게시할 수 있습니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>업체는 ChatGPT에 표시되는 정보를 직접 갱신할 수 있습니다. 등록과 신원 인증에 승인이 필요하며, 업체 등록만으로 ChatGPT 답변에 더 자주 추천되는 것은 아닙니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">ChatGPT 릴리스 노트</a><a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener noreferrer">Business Hub 안내</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>인증받은 업체가 ChatGPT에서 정보와 제품 목록을 관리하고 이용 통계를 볼 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
+          <header class="update-header"><time datetime="2026-11-10">2026-11-10</time><div class="badges"><span class="priority feature">모바일 업데이트</span><span class="tag codex">Codex</span></div></header>
+          <div class="update-body"><h2>iOS 앱에서 Codex 작업에 이미지·파일 붙여넣기</h2><dl class="details">
+            <div><dt>발표일</dt><dd>2026-11-10</dd></div><div><dt>버전</dt><dd>ChatGPT for iOS 1.2026.307</dd></div>
+            <div><dt>주요 변경</dt><dd>전체 화면 입력창에 이미지와 파일을 붙여넣고, 보낸 요청에 첨부한 파일을 다시 열 수 있습니다. 주석 메모를 받아쓰기로 작성할 수 있으며, 실행 중인 Codex Cloud 작업을 다시 열어도 이미 불러온 메시지가 유지됩니다.</dd></div>
+            <div><dt>사용자 영향</dt><dd>휴대전화에서 자료를 첨부하거나 원격 작업을 이어 보기가 쉬워집니다. Windows 호스트의 변경 파일·응답 이미지 열기 오류도 수정됐습니다.</dd></div>
+          </dl><p class="sources"><span>공식 출처</span><a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener noreferrer">ChatGPT·Codex changelog</a></p><section class="user-summary" aria-label="사용자를 위한 변경 요약"><strong>한눈에 보기</strong><p>iOS에서 Codex 요청에 파일을 붙이고 실행 중인 Cloud 작업을 더 안정적으로 확인할 수 있습니다.</p></section></div>
+        </article>
+
+        <article class="update" data-product="codex">
           <header class="update-header"><time datetime="2026-11-06">2026-11-06</time><div class="badges"><span class="priority feature">CLI 업데이트</span><span class="tag codex">Codex</span></div></header>
           <div class="update-body"><h2>Codex CLI 0.167.0: 작업 확인과 실행 환경 전환 개선</h2><dl class="details">
             <div><dt>발표일</dt><dd>2026-11-06</dd></div><div><dt>버전</dt><dd><code>npm install -g @openai/codex@0.167.0</code></dd></div>
